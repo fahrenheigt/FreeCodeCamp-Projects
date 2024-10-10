@@ -1,0 +1,157 @@
+*{
+    margin: 0;
+}
+
+body{
+    font-family: Arial, sans-serif;
+    background-color: #dce775;
+    max-width: 1440px;
+}
+
+ /* Header */
+
+header{
+    background-color:  #fff59d;
+    color: #388e3c;
+    padding: 1em;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0 0 0 40px;
+    border-radius: 0 0 15px 15px;
+}
+
+#header-title{
+    font-size: 1.5em;
+    font-weight: bold;
+    text-decoration: none;
+    color: #388e3c;
+}
+
+#logo-text{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#shrek-is-bg{
+    width: 50px;
+    height: 50px;
+    margin-right: 1em;
+}
+
+#header-title{
+    font-size: 1.5em;
+    margin: 0;
+}
+
+#header-list{
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    margin: 0 50px;
+    padding: 0;
+}
+
+#header-list li{
+    margin: 0 10px;
+}
+
+#header-list a{
+    text-decoration: none;
+    color: #388e3c;
+}
+
+#header-list a:hover{
+    color: #388e3cc0;
+}
+
+ /* img section */
+
+#img-section{
+    border-radius: 20px;
+    padding: 20px;
+    background-color:  #fff59d;
+    color: #388e3c;
+    padding: 20px;
+    margin: 20px;
+    text-align: center;
+}
+
+/* tribute section */
+
+#tribute-info{
+    display: flex;
+    background-color:  #fff59d;
+    border-radius: 20px;
+    padding: 20px;
+    margin: 20px;
+    align-items: center;
+}
+
+#img-div{
+    margin: 5px auto;
+}
+#image{
+    border-radius: 20px;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 10px auto;
+}
+
+/* facts*/
+
+#tribute-info{
+display: flex;
+justify-content: space-around;
+color: #388e3c;
+}
+
+#facts{
+    background-color:  #fff59d;
+    border-radius: 20px;
+    padding: 20px;
+    margin: 20px;
+}
+
+#facts li{
+    margin: 20px;
+}
+
+/* quote */
+
+#quote{
+    background-color:  #fff59d;
+    border-radius: 20px;
+    padding: 20px;
+    margin: 20px;
+    text-align: center;
+}
+
+blockquote{
+    font-size: 1.5em;
+    font-style: italic;
+    margin: 0 0 20px 0;
+    padding: 30px;
+    background-color: #dce775;
+    border-radius: 20px;
+}
+/* link */
+
+#tribute-link{
+    background-color:  #fff59d;
+    border-radius: 20px 20px 0 0;
+    padding: 8px;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    text-decoration: none;
+    color: #388e3c;
+}
+#tribute-link:hover{
+    color: #388e3cc0;
+}
