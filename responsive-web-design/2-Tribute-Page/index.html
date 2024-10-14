@@ -1,56 +1,126 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Shrek is a Hero</title>
-        <link rel="stylesheet" type="text/css" href="styles.css">
-    </head>
-    <body>
-        <main id="main">
-            <header id="header">
-                <div id="logo-text">
-                    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank"><img src="https://attic.sh/t945y6iknp90lud4n4r9vbrek2pt" alt="Shrek is handsome" id="shrek-is-bg"></a>
-                    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" id="header-title">Shrekfan</a>
-                </div>   
-                <nav>
-                    <ul id="header-list">
-                        <li><a href="#tribute-info">About Shrek</a></li>
-                        <li><a href="https://www.youtube.com/watch?v=vXYVfk7agqU" target="_blank">Dance with Shrek</a></li>
-                    </ul>
-                </nav>
-            </header>
-            <section id="img-section">
-                <h1 id="title">Shrek</h1>
-                <p>Shrek is a lovable green ogre who embarks on a journey to reclaim his peaceful swamp 
-                    after it’s overrun by fairy tale creatures. With his gruff exterior and heart of gold, 
-                    he teams up with a talkative donkey named Donkey and later finds himself on an unexpected 
-                    adventure that leads to self-discovery and love. With its unique blend of humor, heartfelt 
-                    moments, and a twist on classic fairy tales, Shrek has captured the hearts of audiences of all ages, 
-                    proving that true beauty lies within.</p>
-                <figure id="img-div">
-                    <img id="image" src="https://media1.tenor.com/m/yEG23sxXIVQAAAAC/shrek-shrek-meme.gif" alt="Shrek is handsome">
-                    <figcaption id="img-caption">Shrek is a hero</figcaption>
-                </figure>
-            </section>
-            <section id="tribute-info">
-                <div id="facts">
-                    <h3 id="headline">Here are some facts about Shrek:</h3>
-                    <ul>
-                        <li>Shrek is an ogre</li>
-                        <li>Shrek lives in a swamp</li>
-                        <li>Shrek has a donkey friend</li>
-                        <li>Shrek saved the princess from the dragon</li>
-                    </ul>
-                </div>
-                <div id="quote">
-                    <blockquote>
-                        <p>Ogres are like onions. They have layers.</p>
-                    </blockquote>
-                    <h3>Shrek the great</h3>
-                </div>
-            </section>
-            <footer id="footer">
-                <a id="tribute-link" href="https://en.wikipedia.org/wiki/Shrek" target="_blank">Shrek's Wikipedia page</a>
-            </footer>
-        </main>
-    </body>
+  <head>
+    <title>Shrek is a Hero</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+      let audiofiles = [
+        "Shrek-draaah.mp3",
+        "tralala.mp3",
+        "amon.mp3",
+        "rizz.mp3",
+        "bieng.mp3",
+        "peur.mp3",
+      ];
+      let playing = false;
+      function randomIntFromInterval(min, max) {
+        // min and max included
+        return Math.floor(Math.random() * (max - min + 1) + min);
+      }
+      $(document).ready(function () {
+        $(document).mousemove(function () {
+          if (playing) return;
+          if ($("#img-wrapper:hover").length != 0) {
+            playing = true;
+            let audio = new Audio(
+              audiofiles[randomIntFromInterval(0, audiofiles.length - 1)]
+            );
+            audio.play();
+            audio.addEventListener("ended", function () {
+              playing = false;
+            });
+          }
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <main id="main">
+      <header id="header">
+        <div id="logo-text">
+          <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank"
+            ><img
+              src="https://attic.sh/t945y6iknp90lud4n4r9vbrek2pt"
+              alt="Shrek is handsome"
+              id="shrek-is-bg"
+          /></a>
+          <a
+            href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+            target="_blank"
+            id="header-title"
+            >Shrekfan</a
+          >
+        </div>
+        <nav>
+          <ul id="header-list">
+            <li><a href="#tribute-info">About Shrek</a></li>
+            <li>
+              <a
+                href="https://www.youtube.com/watch?v=vXYVfk7agqU"
+                target="_blank"
+                >Dance with Shrek</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <section id="img-section">
+        <h1 id="title">Shrek</h1>
+        <p>
+          Shrek is a lovable green ogre who embarks on a journey to reclaim his
+          peaceful swamp after it’s overrun by fairy tale creatures. With his
+          gruff exterior and heart of gold, he teams up with a talkative donkey
+          named Donkey and later finds himself on an unexpected adventure that
+          leads to self-discovery and love. With its unique blend of humor,
+          heartfelt moments, and a twist on classic fairy tales, Shrek has
+          captured the hearts of audiences of all ages, proving that true beauty
+          lies within.
+        </p>
+        <figure id="img-div">
+          <div id="img-wrapper">
+            <img
+              id="image"
+              src="https://media1.tenor.com/m/yEG23sxXIVQAAAAC/shrek-shrek-meme.gif"
+              alt="Shrek is handsome"
+            />
+          </div>
+          <figcaption id="img-caption">Shrek is a hero</figcaption>
+          <p>
+            Shrek’s personality is a delightful mix of humor and sincerity. His
+            sarcastic wit and unapologetic attitude make him relatable, while
+            his loyalty to those he cares about showcases his capacity for love
+            and sacrifice. The character's evolution from a misunderstood
+            monster to a hero who embraces his identity and stands up for those
+            he loves resonates with audiences of all ages.
+          </p>
+        </figure>
+      </section>
+      <section id="tribute-info">
+        <div id="facts">
+          <h3 id="headline">Here are some facts about Shrek:</h3>
+          <ul>
+            <li>Shrek is an ogre</li>
+            <li>Shrek lives in a swamp</li>
+            <li>Shrek has a donkey friend</li>
+            <li>Shrek saved the princess from the dragon</li>
+          </ul>
+        </div>
+        <div id="quote">
+          <blockquote>
+            <p>Ogres are like onions. They have layers.</p>
+          </blockquote>
+          <h3>Shrek the great</h3>
+        </div>
+      </section>
+      <footer id="footer">
+        <a
+          id="tribute-link"
+          href="https://en.wikipedia.org/wiki/Shrek"
+          target="_blank"
+          >Shrek's Wikipedia page</a
+        >
+      </footer>
+    </main>
+  </body>
 </html>

@@ -98,16 +98,38 @@ header{
 }
 
 #img-div{
-    margin: 10px auto;
-}
-#image{
-    border-radius: 20px;
-    max-width: 100%;
-    width: 800px;
-    height: auto;
     margin: 10px;
 }
 
+#img-wrapper{
+    display: inline-block;
+    margin: 10px auto;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+#img-wrapper:hover{
+    border-radius: 100%;
+    filter: contrast(1.8) brightness(1.5) sepia(70%);
+}
+
+#image{
+    max-width: 100%;
+    width: 800px;
+    height: auto;
+    transition: all 0.3s ease-in-out;
+}
+#image:hover{
+    transform: scale(1.55);
+    transform-origin: top left;
+}
+
+#img-caption{
+    font-size: 0.8em;
+    color: #388e3c;
+    margin: 0 0 20px 0;
+}
 /* facts*/
 
 #tribute-info{
