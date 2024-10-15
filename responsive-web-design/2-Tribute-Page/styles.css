@@ -1,10 +1,16 @@
+:root{
+    --main-color: #dce775;
+    --secondary-color: #fff59d;
+    --tertiary-color: #388e3c;
+}
+
 *{
     margin: 0;
 }
 
 body{
     font-family: Arial, sans-serif;
-    background-color: #dce775;
+    background-color: var(--main-color);
     max-width: 1440px;
     margin: 0 auto;
 }
@@ -12,8 +18,8 @@ body{
  /* Header */
 
 header{
-    background-color:  #fff59d;
-    color: #388e3c;
+    background-color: var(--secondary-color);
+    color: var(--tertiary-color);
     padding: 1em;
     text-align: center;
     display: flex;
@@ -29,7 +35,7 @@ header{
     font-size: 1.5em;
     font-weight: bold;
     text-decoration: none;
-    color: #388e3c;
+    color: var(--tertiary-color);
 }
 
 #logo-text{
@@ -63,11 +69,11 @@ header{
 
 #header-list a{
     text-decoration: none;
-    color: #388e3c;
+    color: var(--tertiary-color);
 }
 
 #header-list a:hover{
-    color: #388e3cc0;
+    color: var(--tertiary-color);
 }
 
  /* img section */
@@ -79,8 +85,8 @@ header{
 #img-section{
     border-radius: 20px;
     padding: 20px;
-    background-color:  #fff59d;
-    color: #388e3c;
+    background-color: var(--secondary-color);
+    color: var(--tertiary-color);
     padding: 20px;
     margin: 20px;
     text-align: center;
@@ -90,7 +96,7 @@ header{
 
 #tribute-info{
     display: flex;
-    background-color:  #fff59d;
+    background-color: var(--primary-color);
     border-radius: 20px;
     padding: 20px;
     margin: 20px;
@@ -127,7 +133,7 @@ header{
 
 #img-caption{
     font-size: 0.8em;
-    color: #388e3c;
+    color: var(--tertiary-color);
     margin: 0 0 20px 0;
 }
 /* facts*/
@@ -135,11 +141,11 @@ header{
 #tribute-info{
 display: flex;
 justify-content: space-around;
-color: #388e3c;
+color: var(--tertiary-color);
 }
 
 #facts{
-    background-color:  #fff59d;
+    background-color: var(--secondary-color);
     border-radius: 20px;
     padding: 20px;
     margin: 20px;
@@ -152,7 +158,7 @@ color: #388e3c;
 /* quote */
 
 #quote{
-    background-color:  #fff59d;
+    background-color: var(--secondary-color);
     border-radius: 20px;
     padding: 20px;
     margin: 20px;
@@ -164,7 +170,7 @@ blockquote{
     font-style: italic;
     margin: 0 0 20px 0;
     padding: 30px;
-    background-color: #dce775;
+    background-color: var(--main-color);
     border-radius: 20px;
 }
 /* link */

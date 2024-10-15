@@ -32,6 +32,20 @@
           }
         });
       });
+
+      // JavaScript pour changer l'image au survol
+
+      $(document).ready(function () {
+        $("#image").hover(
+          function () {
+            $(this).attr("src", $(this).data("gif"));
+          },
+          function () {
+            $(this).attr("src", "shrek-img.jpg");
+          }
+        );
+      });
+
     </script>
   </head>
   <body>
@@ -80,7 +94,8 @@
           <div id="img-wrapper">
             <img
               id="image"
-              src="https://media1.tenor.com/m/yEG23sxXIVQAAAAC/shrek-shrek-meme.gif"
+              src="shrek-img.jpg"
+              data-gif="shrek-gif.gif"
               alt="Shrek is handsome"
             />
           </div>
