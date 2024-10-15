@@ -6,32 +6,44 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script>
       let audiofiles = [
-        "Shrek-draaah.mp3",
-        "tralala.mp3",
-        "amon.mp3",
-        "rizz.mp3",
-        "bieng.mp3",
-      ];
-      let playing = false;
-      function randomIntFromInterval(min, max) {
-        // min and max included
-        return Math.floor(Math.random() * (max - min + 1) + min);
-      }
-      $(document).ready(function () {
-        $(document).mousemove(function () {
-          if (playing) return;
-          if ($("#img-wrapper:hover").length != 0) {
-            playing = true;
-            let audio = new Audio(
-              audiofiles[randomIntFromInterval(0, audiofiles.length - 1)]
-            );
-            audio.play();
-            audio.addEventListener("ended", function () {
-              playing = false;
-            });
-          }
-        });
-      });
+  "Shrek-draaah.mp3",
+  "tralala.mp3",
+  "amon.mp3",
+  "rizz.mp3",
+  "bieng.mp3",
+];
+let playing = false;
+let audio; // Variable pour stocker l'objet Audio globalement
+
+function randomIntFromInterval(min, max) {
+  // min and max included
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+$(document).ready(function () {
+  // Au survol de l'élément
+  $("#img-wrapper").mouseenter(function () {
+    if (playing) return;
+    playing = true;
+    audio = new Audio(audiofiles[randomIntFromInterval(0, audiofiles.length - 1)]);
+    audio.play();
+
+    // Quand l'audio se termine naturellement
+    audio.addEventListener("ended", function () {
+      playing = false;
+    });
+  });
+
+  // Quand la souris quitte l'élément
+  $("#img-wrapper").mouseleave(function () {
+    if (audio) {
+      audio.pause(); // Arrêter l'audio
+      audio.currentTime = 0; // Remettre l'audio au début
+      playing = false;
+    }
+  });
+});
+
 
       // JavaScript pour changer l'image au survol
 
