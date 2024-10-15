@@ -4,6 +4,14 @@
     --tertiary-color: #388e3c;
 }
 
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
+
 *{
     margin: 0;
 }
@@ -131,6 +139,7 @@ header{
 #image:hover{
     transform: scale(1.55);
     transform-origin: top left;
+    cursor: URL('front_hand_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg'), zoom-in;
 }
 
 #img-caption{
