@@ -1,0 +1,20 @@
+body {
+  background-color: #010A13;
+  color: #F0E6D2;
+  margin: 0;
+}
+
+#navbar {
+  background-color: #1E282D;
+  color: #F0E6D2;
+  border-right: 2px solid #C89B3C;
+  position: fixed;
+  min-width: 290px;
+  top: 0px;
+  left: 0px;
+  width: 300px;
+  height: 100%;
+}
+#navbar header {
+  color: #C89B3C;
+}/*# sourceMappingURL=main.css.map */

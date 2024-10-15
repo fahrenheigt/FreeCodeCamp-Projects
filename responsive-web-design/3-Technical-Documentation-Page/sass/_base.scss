@@ -1,0 +1,21 @@
+body{
+    background-color: $black;
+    color: $gold-one;
+    margin: 0;
+}
+
+#navbar{
+    background-color: $grey-three;
+    color: $gold-one;
+    border-right: 2px solid $gold-three;
+    position: fixed;
+    min-width: 290px;
+    top: 0px;
+    left: 0px;
+    width: 300px;
+    height: 100%;
+
+    header{
+        color: $gold-three;
+    }
+}
