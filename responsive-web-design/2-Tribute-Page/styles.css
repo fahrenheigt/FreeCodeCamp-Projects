@@ -176,15 +176,15 @@ blockquote{
 /* link */
 
 #tribute-link{
-    background-color:  #fff59d;
+    background-color: var(--secondary-color);
     border-radius: 20px 20px 0 0;
     padding: 8px;
     display: block;
     margin: 0 auto;
     text-align: center;
     text-decoration: none;
-    color: #388e3c;
+    color: var(--tertiary-color);
 }
 #tribute-link:hover{
-    color: #388e3cc0;
+    color: var(--tertiary-color);
 }
