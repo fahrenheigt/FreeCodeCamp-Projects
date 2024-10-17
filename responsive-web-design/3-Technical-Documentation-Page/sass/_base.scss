@@ -1,15 +1,22 @@
-body{
-    background-color: $black;
-    color: $gold-one;
-    margin: 0;
+html{
+    scroll-behavior:smooth;
 }
 
-#navbar{
-    background-color: $grey-three;
+body{
+    background-color: $grey;
     color: $gold-one;
-    border-right: 2px solid $gold-three;
+    margin: 0;
+    font-family: $font-regular;
+    line-height: 1.5;
+}
+
+.navbar{
+    background-color: $black;
+    color: $gold-one;
+    border-right: 3px solid $gold-three;
     position: fixed;
     min-width: 290px;
+    max-height: fit-content;
     top: 0px;
     left: 0px;
     width: 300px;
@@ -17,5 +24,90 @@ body{
 
     header{
         color: $gold-three;
+        font-family: $font-bold;
+        font: 2em sans-serif;
+        font-weight: bold;
+        text-align: center;
+        padding: 34px;
+        border-bottom: 1px solid $gold-three;
+
+        img{
+            object-fit: cover;
+            width: 100px;
+            position: absolute;
+            top: 15px;
+            left: 26px;
+        }
+    }
+
+    ul{
+        list-style-type: none;
+        padding: 0;
+        column-gap: 20px;
+        margin: 0 50px;
+    }
+
+    &__link{
+        text-decoration: none;
+        color: $gold-three;
+        font-family: $font-bold;
+        font: 1.5em sans-serif;
+        font-weight: bold;
+        text-align: center;
+        text-decoration: none;
+        display: block;
+        padding: 32px;
+        border-bottom: 2px solid $gold-three;
+        transition: all 0.5s;
+
+        &:hover{
+            color: $grey-two;
+            background-color: $black;
+        }
+    }
+}
+
+.main-doc{
+    position: absolute;
+    margin-left: 303px;
+    padding: 0 30px;
+
+    .main-section{
+        padding: 20px;
+        background-color: $black;
+        color: $gold-one;
+        border: 2px solid $gold-three;
+        border-radius: 10px;
+        font-size: large;
+        margin: 0px 0;
+
+        .sub-header{
+            padding-top: 0.75rem;
+            margin-bottom: -3.5rem;
+            color: rgb(200, 155, 60);
+            font-family: "Beaufort for LOL";
+            font-size: 1.125rem;
+            line-height: 1.12;
+            letter-spacing: 0.025em;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        header{
+            color: $gold-one;
+            font-family: $font-bold;
+            font-size: 5.625rem;
+            line-height: 1.08;
+            letter-spacing: -0.01em;
+            font-weight: 700;
+            text-align: center;
+            padding: 34px;
+        }
+
+        img{
+            object-fit: cover;
+            width: 100%;
+            margin: 0 auto;
+        }
     }
 }
