@@ -14,8 +14,9 @@
     transition: all 0.3s;
 
     &:hover {
-        transform: scale(1.1);
-        filter: grayscale(70%);
+        transform: scale(1.05);
+        filter: saturate(1.5);
+        box-shadow: 0 4px 10px 2px #ffee10; // Shadow effect on hover
     }
 
     img {

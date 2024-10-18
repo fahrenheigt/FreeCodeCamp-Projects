@@ -153,8 +153,9 @@ body {
   transition: all 0.3s;
 }
 .champion-card:hover {
-  transform: scale(1.1);
-  filter: grayscale(70%);
+  transform: scale(1.05);
+  filter: saturate(1.5);
+  box-shadow: 0 4px 10px 2px #ffee10;
 }
 .champion-card img {
   border-radius: 8px;
@@ -303,7 +304,6 @@ body {
   justify-content: space-evenly;
 }
 #item-container .item-card {
-  position: relative;
   border: 2px solid #C89B3C;
   border-radius: 8px;
   margin: 16px;
@@ -311,10 +311,10 @@ body {
   width: 200px;
   text-align: center;
   cursor: pointer;
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: all 0.3s;
 }
 #item-container .item-card.expanded {
-  position: absolute;
+  position: inherit;
   z-index: 10;
   width: 300px;
   height: auto;
@@ -323,16 +323,25 @@ body {
 }
 #item-container .item-card:hover {
   transform: scale(1.05);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 10px 2px #ffee10;
+  filter: saturate(1.5);
 }
 #item-container .item-card .item-image {
+  border-radius: 8px;
   width: 100%;
-  height: auto;
-  border-radius: 5px;
-  margin-bottom: 10px;
+  height: 200px;
   object-fit: cover;
+  border-bottom: 2px ridge #C89B3C;
+}
+#item-container .item-card h3 {
+  margin: 5px 0 0 0;
+  font-size: 18px;
+}
+#item-container .item-card p {
+  font-size: 14px;
+  margin: 5px 0 2px 0;
 }
 #item-container .item-card .item-cost {
-  font-size: 0.8em;
+  font-size: 18px;
   color: #ffd700;
 }/*# sourceMappingURL=main.css.map */

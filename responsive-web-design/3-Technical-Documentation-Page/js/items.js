@@ -72,7 +72,7 @@ fetch('../data/item.json')
             card.innerHTML = `
                 <img src="../images/item/${item.image.full}" alt="${item.name}" class="item-image">
                 <h3>${item.name}</h3> <!-- Item name as a header -->
-                <p class="item-cost">Cost: ${item.gold.total}g</p> <!-- Item cost as small text -->
+                <p class="item-cost">${item.gold.total}g</p> <!-- Item cost as small text -->
                 <div class="item-hover-info" style="display: none;"> <!-- Hidden by default -->
                     <ul class="item-stats"> <!-- Item stats as a list -->
                         ${Object.keys(item.stats).map(stat => `
@@ -139,7 +139,7 @@ function displayItems(items) {
         itemCard.innerHTML = `
             <img src="../images/item/${item.image.full}" alt="${item.name}" class="item-image">
             <h3>${item.name}</h3> <!-- Item name as a header -->
-            <p class="item-cost">Cost: ${item.gold.total}g</p> <!-- Item cost as small text -->
+            <p class="item-cost">${item.gold.total}g</p> <!-- Item cost as small text -->
             <div class="item-hover-info" style="display: none;"> <!-- Hidden by default -->
                 <ul class="item-stats"> <!-- Item stats as a list -->
                     ${Object.keys(item.stats).map(stat => `

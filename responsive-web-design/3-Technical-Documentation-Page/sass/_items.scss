@@ -10,7 +10,6 @@ $item-cost-color: #ffd700; // Gold color for the cost
     justify-content: space-evenly;
 
     .item-card {
-        position: relative;
         border: 2px solid $gold-three;
         border-radius: 8px;
         margin: 16px;
@@ -18,10 +17,10 @@ $item-cost-color: #ffd700; // Gold color for the cost
         width: 200px;
         text-align: center;
         cursor: pointer;
-        transition: transform 0.3s, box-shadow 0.3s; 
+        transition: all 0.3s;
 
         &.expanded {
-            position: absolute;
+            position: inherit;
             z-index: 10;
             width: 300px;
             height: auto;
@@ -31,19 +30,30 @@ $item-cost-color: #ffd700; // Gold color for the cost
     
         &:hover {
             transform: scale(1.05); // Scale up on hover
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); // Shadow effect on hover
+            box-shadow: 0 4px 10px 2px #ffee10; // Shadow effect on hover
+            filter: saturate(1.5); // Brighten the image on hover
         }
     
         .item-image {
+            border-radius: 8px;
             width: 100%;
-            height: auto;
-            border-radius: 5px; 
-            margin-bottom: 10px;
+            height: 200px;
             object-fit: cover;
+            border-bottom: 2px ridge $gold-three;
+        }
+
+        h3 {
+            margin: 5px 0 0 0;
+            font-size: 18px;
+        }
+
+        p{
+            font-size: 14px;
+            margin: 5px 0 2px 0;
         }
     
         .item-cost {
-            font-size: 0.8em;
+            font-size: 18px;
             color: $item-cost-color;
         }
     }
