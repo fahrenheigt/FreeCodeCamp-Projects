@@ -2,6 +2,7 @@
 <html><head>
     <link rel="stylesheet" href="main.css">
     <script src="/js/champions.js"></script>
+    <script src="/js/items.js"></script>
     <link rel="icon" type="Lol-logo" href="images/favicon.ico">
     <meta name="description" content="Explore detailed champion profiles with interactive cards and modals for League of Legends. View champion images, titles, spells, stats, and lore with smooth animations and popups.">
   </head>
@@ -13,20 +14,24 @@
     </header>
       <ul>
         <li><a class="navbar__link" href="#Introduction_to_league">Introduction to League</a></li>
+        <img src="/images/decorator.png" alt="decorator" class="decorator">
         <li>
           <a class="navbar__link" href="#About_this_guide">About this Guide</a>
         </li>
+        <img src="/images/decorator.png" alt="decorator" class="decorator">
         <li>
           <a class="navbar__link" href="#Champions">Champions</a>
         </li>
+        <img src="/images/decorator.png" alt="decorator" class="decorator">
         <li><a class="navbar__link" href="#Items">Items</a></li>
+        <img src="/images/decorator.png" alt="decorator" class="decorator">
         <li><a class="navbar__link" href="#How_do_statistics_work_?">How do statistics work ?</a></li>
       </ul>
     </nav>
     <main class="main-doc" id="main-doc">
       <section class="main-section" id="Introduction_to_league">
         <header class="sub-header">Welcome to</header>
-        <header>League of Legends !</header>
+        <header>League of Legends</header>
         <img src="/images/decorator.png" alt="decorator" class="decorator">
         <article>
           <p>
@@ -50,7 +55,7 @@
         </article>
       </section>
       <section class="main-section" id="About_this_guide">
-        <header>About this Guide</header>
+        <header>About this documentation</header>
         <img src="/images/decorator.png" alt="decorator" class="decorator">
         <article>
           <p>
@@ -76,10 +81,15 @@
             <div id="champion-modal" class="modal">
               <div class="modal-content">
                   <span class="close">&times;</span>
-                  <h2 id="champion-name"></h2>
-                  <p id="champion-title"></p>
+                  <div class="name-and-title">
+                    <h2 id="champion-name"></h2>
+                    <p id="champion-title"></p>
+                  </div>
+                  <h3>Lore</h3>
+                  <img src="/images/decorator.png" alt="decorator" class="decorator">
                   <p id="champion-lore"></p>
                   <h3>Spells</h3>
+                  <img src="/images/decorator.png" alt="decorator" class="decorator">
                   <ul id="champion-spells"></ul>
               </div>
           </div>
@@ -89,9 +99,31 @@
         <header>Items</header>
         <img src="/images/decorator.png" alt="decorator" class="decorator">
         <article>
-          Hello
-          <code>Hello
-          </code>
+          <div id="filter-container">
+            <label for="stat-filter">Filter by statistic:</label>
+            <select id="stat-filter">
+                <option value="All">Display All</option>
+                <option value="FlatMovementSpeedMod">Movement Speed</option>
+                <option value="FlatArmorMod">Armor</option>
+                <option value="FlatMagicDamageMod">Magic Damage</option>
+                <option value="FlatHPRegenMod">Health Regeneration</option>
+                <option value="PercentLifeStealMod">Life Steal</option>
+                <option value="PercentAttackSpeedMod">Attack Speed</option>
+                <option value="PercentSpellBlockMod">Magic Resist</option>
+                <option value="FlatPhysicalDamageMod">Physical Damage</option>
+                <option value="FlatHPPoolMod">Health</option>
+                <option value="FlatMPPoolMod">Mana</option>
+                <option value="FlatCritChanceMod">Critical Strike Chance</option>
+            </select>
+            <button id="apply-filter">Apply Filter</button>
+          </div>
+        <!-- Search bar to search items by name -->
+          <div id="search-container">
+            <label for="search-bar">Search by name:</label>
+            <input type="text" id="search-bar" placeholder="Enter item name">
+            <button id="apply-search">Search</button>
+          </div>
+          <div id="item-container"></div>
         </article>
       </section>
       <section class="main-section" id="How_do_statistics_work_?">
@@ -103,8 +135,7 @@
         <p>
 Hello
         </p>
-        <p>
-Hello
-        </p>
+        <code>Hello
+        </code>
       </section>
     </main>

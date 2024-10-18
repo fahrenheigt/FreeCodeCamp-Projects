@@ -1,0 +1,50 @@
+$item-bg: #2c2f33; // Dark background for the card
+$item-border: #dcdcdc; // Light border for the card
+$item-text-color: #ffffff; // White text color
+$item-cost-color: #ffd700; // Gold color for the cost
+
+#item-container{
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+    .item-card {
+        position: relative;
+        border: 2px solid $gold-three;
+        border-radius: 8px;
+        margin: 16px;
+        display: inline-block;
+        width: 200px;
+        text-align: center;
+        cursor: pointer;
+        transition: transform 0.3s, box-shadow 0.3s; 
+
+        &.expanded {
+            position: absolute;
+            z-index: 10;
+            width: 300px;
+            height: auto;
+            background-color: $black;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
+        }
+    
+        &:hover {
+            transform: scale(1.05); // Scale up on hover
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); // Shadow effect on hover
+        }
+    
+        .item-image {
+            width: 100%;
+            height: auto;
+            border-radius: 5px; 
+            margin-bottom: 10px;
+            object-fit: cover;
+        }
+    
+        .item-cost {
+            font-size: 0.8em;
+            color: $item-cost-color;
+        }
+    }
+}
