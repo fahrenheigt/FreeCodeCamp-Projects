@@ -18,16 +18,10 @@ $item-cost-color: #ffd700; // Gold color for the cost
         text-align: center;
         cursor: pointer;
         transition: all 0.3s;
+        vertical-align: top;
+        position: relative;
+        overflow: hidden;
 
-        &.expanded {
-            position: inherit;
-            z-index: 10;
-            width: 300px;
-            height: auto;
-            background-color: $black;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
-        }
-    
         &:hover {
             transform: scale(1.05); // Scale up on hover
             box-shadow: 0 4px 10px 2px #ffee10; // Shadow effect on hover
@@ -55,6 +49,20 @@ $item-cost-color: #ffd700; // Gold color for the cost
         .item-cost {
             font-size: 18px;
             color: $item-cost-color;
+        }
+    }
+    .clonedItem{
+        display: none;
+        z-index: 100;
+        background-color: rgba(0, 0, 0, 0.8);
+        display: block;
+        transform: translateX(-15%);
+
+        &:hover {
+            transform: none; // Scale up on hover
+            box-shadow: 0 4px 10px 2px #ffee10; // Shadow effect on hover
+            filter: saturate(1.5); // Brighten the image on hover
+            transform: translateX(-15%);
         }
     }
 }

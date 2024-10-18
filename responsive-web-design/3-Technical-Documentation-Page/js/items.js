@@ -53,6 +53,10 @@ const statMapping = {
     "PercentMagicPenetrationModPerLevel": "Percent Magic Penetration per Level"
 };
 
+
+// Track the currently expanded card
+let expandedCard = null;
+
 // Fetch the JSON file for items
 fetch('../data/item.json')
     .then(response => response.json()) // Parse the JSON data
@@ -71,132 +75,68 @@ fetch('../data/item.json')
             // Generate HTML content for the item
             card.innerHTML = `
                 <img src="../images/item/${item.image.full}" alt="${item.name}" class="item-image">
-                <h3>${item.name}</h3> <!-- Item name as a header -->
-                <p class="item-cost">${item.gold.total}g</p> <!-- Item cost as small text -->
-                <div class="item-hover-info" style="display: none;"> <!-- Hidden by default -->
-                    <ul class="item-stats"> <!-- Item stats as a list -->
+                <h3>${item.name}</h3>
+                <p class="item-cost">${item.gold.total}g</p>
+                <div class="item-hover-info" style="display: none;">
+                    <ul class="item-stats">
                         ${Object.keys(item.stats).map(stat => `
                             <li><strong>${statMapping[stat] || stat}:</strong> ${item.stats[stat]}</li>
                         `).join('')}
                     </ul>
-                    <p class="item-description">${item.plaintext}</p> <!-- Item description as text -->
+                    <p class="item-description">${item.plaintext}</p>
                 </div>
             `;
 
-            // Add click event to toggle visibility of stats and description
-            card.addEventListener('click', () => {
-                // Collapse any other expanded cards
-                const allCards = document.querySelectorAll('.item-card');
-                allCards.forEach(c => {
-                    if (c !== card) {
-                        c.classList.remove('expanded');
-                        c.querySelector('.item-hover-info').style.display = 'none'; // Hide other cards
-                    }
-                });
+            // Add click event to expand/collapse the card
+            $(card).on('click', function (e) {
+                e.stopPropagation();
 
-                // Expand or collapse the clicked card
-                const hoverInfo = card.querySelector('.item-hover-info');
-                if (card.classList.contains('expanded')) {
-                    card.classList.remove('expanded'); // Collapse this card
-                    hoverInfo.style.display = 'none'; // Hide info
+                // If this card is already expanded, shrink it
+                if (expandedCard === this) {
+                    closeExpandedCard(this);
+                    expandedCard = null;
                 } else {
-                    card.classList.add('expanded'); // Expand this card
-                    hoverInfo.style.display = 'block'; // Show info
+                    // If there's another expanded card, close it first
+                    if (expandedCard) {
+                        closeExpandedCard(expandedCard);
+                    }
+
+                    // Expand the clicked card
+                    expandedCard = this;
+                    $(this).find('.item-hover-info').show(); // Show the hover info
+
+                    // Set a larger size for the expanded card
+                    $(this).css({
+                        width: '300px', // Set desired width for the popup effect
+                        height: 'auto', // Allow height to expand based on content
+                        zIndex: 1000, // Bring the expanded card to the front
+                    });
                 }
             });
 
             // Append the card to the container
             container.appendChild(card);
         }
+
+        // Add event listener for clicks outside the expanded card
+        $(document).on('click', function () {
+            if (expandedCard) {
+                closeExpandedCard(expandedCard);
+                expandedCard = null;
+            }
+        });
     })
     .catch(error => {
         console.error('Error fetching the JSON file:', error);
     });
 
-// Function to filter items based on selected statistic
-function filterItemsByStat(items, stat) {
-    if (stat === 'All') {
-        return items; // Return all items if 'Display All' is selected
-    }
-    return items.filter(item => item.stats[stat] && item.stats[stat] !== 0);
-}
-
-// Function to filter items based on the search query
-function searchItemsByName(items, searchTerm) {
-    return items.filter(item => item.name.toLowerCase().includes(searchTerm.toLowerCase()));
-}
-
-// Function to display items in the container
-function displayItems(items) {
-    const container = document.getElementById('item-container');
-    container.innerHTML = ''; // Clear previous items
-
-    items.forEach(item => {
-        const itemCard = document.createElement('div');
-        itemCard.classList.add('item-card');
-
-        // Generate HTML content for the item
-        itemCard.innerHTML = `
-            <img src="../images/item/${item.image.full}" alt="${item.name}" class="item-image">
-            <h3>${item.name}</h3> <!-- Item name as a header -->
-            <p class="item-cost">${item.gold.total}g</p> <!-- Item cost as small text -->
-            <div class="item-hover-info" style="display: none;"> <!-- Hidden by default -->
-                <ul class="item-stats"> <!-- Item stats as a list -->
-                    ${Object.keys(item.stats).map(stat => `
-                        <li><strong>${statMapping[stat] || stat}:</strong> ${item.stats[stat]}</li>
-                    `).join('')}
-                </ul>
-                <p class="item-description">${item.plaintext}</p> <!-- Item description as text -->
-            </div>
-        `;
-
-        // Add click event to toggle visibility of stats and description
-        itemCard.addEventListener('click', () => {
-            // Collapse any other expanded cards
-            const allCards = document.querySelectorAll('.item-card');
-            allCards.forEach(c => {
-                if (c !== itemCard) {
-                    c.classList.remove('expanded');
-                    c.querySelector('.item-hover-info').style.display = 'none'; // Hide other cards
-                }
-            });
-
-            // Expand or collapse the clicked card
-            const hoverInfo = itemCard.querySelector('.item-hover-info');
-            if (itemCard.classList.contains('expanded')) {
-                itemCard.classList.remove('expanded'); // Collapse this card
-                hoverInfo.style.display = 'none'; // Hide info
-            } else {
-                itemCard.classList.add('expanded'); // Expand this card
-                hoverInfo.style.display = 'block'; // Show info
-            }
-        });
-
-        container.appendChild(itemCard);
+// Function to shrink and close the expanded card
+function closeExpandedCard(card) {
+    $(card).find('.item-hover-info').hide(); // Hide the hover info
+    $(card).removeClass('expanded'); // Remove expanded class
+    $(card).css({ // Reset styles
+        width: '200px', // Reset width to 200px
+        height: 'auto', // Allow height to collapse
+        zIndex: 'auto', // Reset zIndex
     });
 }
-
-// Load and filter items from the JSON file
-fetch('../data/item.json')
-    .then(response => response.json())
-    .then(data => {
-        const items = Object.values(data.data); // Get all items
-
-        // Handle filter button click
-        document.getElementById('apply-filter').addEventListener('click', () => {
-            const selectedStat = document.getElementById('stat-filter').value;
-            const filteredItems = filterItemsByStat(items, selectedStat);
-            displayItems(filteredItems); // Display filtered items
-        });
-
-        // Handle search button click
-        document.getElementById('apply-search').addEventListener('click', () => {
-            const searchTerm = document.getElementById('search-bar').value;
-            const searchedItems = searchItemsByName(items, searchTerm);
-            displayItems(searchedItems); // Display searched items
-        });
-
-        // Display all items by default
-        displayItems(items);
-    })
-    .catch(error => console.error('Error fetching the JSON file:', error));

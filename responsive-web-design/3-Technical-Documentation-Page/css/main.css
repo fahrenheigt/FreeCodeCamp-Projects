@@ -312,14 +312,9 @@ body {
   text-align: center;
   cursor: pointer;
   transition: all 0.3s;
-}
-#item-container .item-card.expanded {
-  position: inherit;
-  z-index: 10;
-  width: 300px;
-  height: auto;
-  background-color: #010A13;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
+  vertical-align: top;
+  position: relative;
+  overflow: hidden;
 }
 #item-container .item-card:hover {
   transform: scale(1.05);
@@ -344,4 +339,17 @@ body {
 #item-container .item-card .item-cost {
   font-size: 18px;
   color: #ffd700;
+}
+#item-container .clonedItem {
+  display: none;
+  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: block;
+  transform: translateX(-15%);
+}
+#item-container .clonedItem:hover {
+  transform: none;
+  box-shadow: 0 4px 10px 2px #ffee10;
+  filter: saturate(1.5);
+  transform: translateX(-15%);
 }/*# sourceMappingURL=main.css.map */
