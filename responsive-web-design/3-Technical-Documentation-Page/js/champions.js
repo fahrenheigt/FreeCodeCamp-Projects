@@ -3,9 +3,9 @@
        .then(response => response.json()) // Parse the JSON data
        .then(data => {
            const champions = data.data; // Access the champions object
+           const backdropFilter= document.getElementById('backdrop-filter');//Backdrop filter for the modal
            const container = document.getElementById('champion-container'); // Container for champion cards
            const modal = document.getElementById('champion-modal'); // Modal element
-           const closeBtn = document.getElementsByClassName('close')[0]; // Close button in modal
            const nameEl = document.getElementById('champion-name'); // Champion name in modal
            const titleEl = document.getElementById('champion-title'); // Champion title in modal
            const loreEl = document.getElementById('champion-lore'); // Champion lore in modal
@@ -32,7 +32,7 @@
                    // Set modal content
                    nameEl.textContent = champion.name;
                    titleEl.textContent = champion.title;
-                   loreEl.textContent = champion.lore;
+                   loreEl.innerHTML = champion.lore;
 
                         // Display champion spells
                         spellsEl.innerHTML = ''; // Clear previous spells
@@ -51,22 +51,23 @@
                    // Show the modal
                    modal.style.display = 'block';
                    modal.scrollTo({ top: 0, behavior: 'smooth' });
+                     backdropFilter.style.display = 'block';
+                    document.body.classList.add('hide-scrollbar');
                });
+
 
 
                // Append the card to the container
                container.appendChild(card);
            }
 
-           // Close the modal when the close button is clicked
-           closeBtn.onclick = () => {
-               modal.style.display = 'none';
-           };
-
            // Close the modal if the user clicks outside of the modal content
            window.onclick = event => {
-               if (event.target === modal) {
+                console.log(event.target);
+               if (event.target === backdropFilter || event.target === modal) {
                    modal.style.display = 'none';
+                   backdropFilter.style.display = 'none';
+                   document.body.classList.remove('hide-scrollbar');
                }
            };
        })

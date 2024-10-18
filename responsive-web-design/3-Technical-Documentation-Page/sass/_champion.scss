@@ -39,29 +39,42 @@
 }
 
 /* Modal Styling */
+#backdrop-filter{
+-webkit-backdrop-filter: blur(10px);
+ backdrop-filter: blur(10px);
+ width: 100%;
+ height: 100%;
+ z-index: 1;
+ position: fixed;
+ top: 0;
+ left: 0;
+ display: none;
+}
+
+.hide-scrollbar, .hide-scrollbar *{
+    overflow-y: hidden;
+}
 
 .modal{
     display: none;
     position: fixed;
     z-index: 1;
-    left: 313px;
     top: 0;
-    width: 80%;
+    left: 0;
+    width: 100%;
     height: 100%;
-    overflow: auto;
-    padding-top: 60px;
-    backdrop-filter: blur(5px);
     scroll-behavior: smooth;
+    overflow: auto !important;
 
     .modal-content{
         background-color: $black;
-        margin: 5% auto;
+        margin: 2% auto;
         padding: 20px;
         border: 3px solid $gold-three;
-        width: 80%;
-        max-width: 600px;
+        width: 40%;
         border-radius: 8px;
         text-align: center;
+        
 
         .name-and-title{
             margin: 0;
@@ -126,6 +139,8 @@
 
             img{
                 border: 2px solid $gold-three;
+                height: auto;
+                width: 20%;
             }
 
             li{
@@ -138,34 +153,7 @@
                 }
             }
         }
-
-        .close{
-           position: absolute; 
-           top: 115px;
-           left: 285px;
-           font-size: 25px;
-           color: $gold-three;
-
-           &:hover{
-            color: #cdbe91;
-            transition: 0.3s;
-            filter: brightness(1.5);
-          }
-        }
     }    
-}
-
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-
-    &:hover,&:focus {
-        color: black;
-        text-decoration: none;
-        cursor: pointer;
-    }
 }
 
 .spell-item {

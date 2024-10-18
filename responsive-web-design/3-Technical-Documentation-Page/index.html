@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html><head>
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="/css/main.css">
     <script src="/js/champions.js"></script>
     <script src="/js/items.js"></script>
     <link rel="icon" type="Lol-logo" href="images/favicon.ico">
@@ -78,9 +78,9 @@
 
           </div>
               <!-- Modal for Champion Info -->
-            <div id="champion-modal" class="modal">
+            <div id="backdrop-filter"></div>
+            <div class="modal" id="champion-modal">
               <div class="modal-content">
-                  <span class="close">&times;</span>
                   <div class="name-and-title">
                     <h2 id="champion-name"></h2>
                     <p id="champion-title"></p>
@@ -92,7 +92,7 @@
                   <img src="/images/decorator.png" alt="decorator" class="decorator">
                   <ul id="champion-spells"></ul>
               </div>
-          </div>
+            </div>
         </article>
       </section>
       <section class="main-section" id="Items">
