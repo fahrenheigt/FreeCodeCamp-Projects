@@ -3,6 +3,23 @@ $item-border: #dcdcdc; // Light border for the card
 $item-text-color: #ffffff; // White text color
 $item-cost-color: #ffd700; // Gold color for the cost
 
+.blackface, .blackface *{
+    color: $black !important;
+    border-color: $black !important;
+    background-color: $black !important;
+    transition: all 0s !important;
+
+    &:hover {
+        transform: none !important;
+        box-shadow: none !important;
+        filter: none !important;
+    }
+}
+
+.blackface > img{
+    display: none;
+}
+
 #item-container{
 
     display: flex;
@@ -10,11 +27,13 @@ $item-cost-color: #ffd700; // Gold color for the cost
     justify-content: space-evenly;
 
     .item-card {
+        background-color: $black;
         border: 2px solid $gold-three;
         border-radius: 8px;
         margin: 16px;
         display: inline-block;
-        width: 200px;
+        width: 12rem;
+        height: 18rem;
         text-align: center;
         cursor: pointer;
         transition: all 0.3s;
@@ -31,7 +50,7 @@ $item-cost-color: #ffd700; // Gold color for the cost
         .item-image {
             border-radius: 8px;
             width: 100%;
-            height: 200px;
+            height: auto;
             object-fit: cover;
             border-bottom: 2px ridge $gold-three;
         }

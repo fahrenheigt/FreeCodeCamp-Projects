@@ -298,17 +298,35 @@ body {
   margin-left: 50px;
 }
 
+.blackface, .blackface * {
+  color: #010A13 !important;
+  border-color: #010A13 !important;
+  background-color: #010A13 !important;
+  transition: all 0s !important;
+}
+.blackface:hover, .blackface *:hover {
+  transform: none !important;
+  box-shadow: none !important;
+  filter: none !important;
+}
+
+.blackface > img {
+  display: none;
+}
+
 #item-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
 #item-container .item-card {
+  background-color: #010A13;
   border: 2px solid #C89B3C;
   border-radius: 8px;
   margin: 16px;
   display: inline-block;
-  width: 200px;
+  width: 12rem;
+  height: 18rem;
   text-align: center;
   cursor: pointer;
   transition: all 0.3s;
@@ -324,7 +342,7 @@ body {
 #item-container .item-card .item-image {
   border-radius: 8px;
   width: 100%;
-  height: 200px;
+  height: auto;
   object-fit: cover;
   border-bottom: 2px ridge #C89B3C;
 }

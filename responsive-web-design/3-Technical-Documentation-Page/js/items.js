@@ -52,26 +52,25 @@ const statMapping = {
     "PercentMagicPenetrationMod": "Percent Magic Penetration",
     "PercentMagicPenetrationModPerLevel": "Percent Magic Penetration per Level"
 };
-
-
+ 
+$(document).ready(async function () {
 // Track the currently expanded card
-let expandedCard = null;
-
+ 
 // Fetch the JSON file for items
-fetch('../data/item.json')
+await fetch('../data/item.json')
     .then(response => response.json()) // Parse the JSON data
     .then(data => {
         const items = data.data; // Access the items object
         const container = document.getElementById('item-container'); // Container for item cards
-
+ 
         // Loop through each item in the JSON
         for (let itemKey in items) {
             const item = items[itemKey]; // Each item's data
-
+ 
             // Create a card for each item
             const card = document.createElement('div');
             card.classList.add('item-card');
-
+ 
             // Generate HTML content for the item
             card.innerHTML = `
                 <img src="../images/item/${item.image.full}" alt="${item.name}" class="item-image">
@@ -86,57 +85,73 @@ fetch('../data/item.json')
                     <p class="item-description">${item.plaintext}</p>
                 </div>
             `;
-
-            // Add click event to expand/collapse the card
-            $(card).on('click', function (e) {
-                e.stopPropagation();
-
-                // If this card is already expanded, shrink it
-                if (expandedCard === this) {
-                    closeExpandedCard(this);
-                    expandedCard = null;
-                } else {
-                    // If there's another expanded card, close it first
-                    if (expandedCard) {
-                        closeExpandedCard(expandedCard);
-                    }
-
-                    // Expand the clicked card
-                    expandedCard = this;
-                    $(this).find('.item-hover-info').show(); // Show the hover info
-
-                    // Set a larger size for the expanded card
-                    $(this).css({
-                        width: '300px', // Set desired width for the popup effect
-                        height: 'auto', // Allow height to expand based on content
-                        zIndex: 1000, // Bring the expanded card to the front
-                    });
-                }
-            });
-
+ 
+ 
             // Append the card to the container
             container.appendChild(card);
         }
-
-        // Add event listener for clicks outside the expanded card
-        $(document).on('click', function () {
-            if (expandedCard) {
-                closeExpandedCard(expandedCard);
-                expandedCard = null;
-            }
-        });
     })
     .catch(error => {
         console.error('Error fetching the JSON file:', error);
     });
-
-// Function to shrink and close the expanded card
-function closeExpandedCard(card) {
-    $(card).find('.item-hover-info').hide(); // Hide the hover info
-    $(card).removeClass('expanded'); // Remove expanded class
-    $(card).css({ // Reset styles
-        width: '200px', // Reset width to 200px
-        height: 'auto', // Allow height to collapse
-        zIndex: 'auto', // Reset zIndex
+ 
+    $('.item-card').each(function(i, obj) {
+        var clone;
+        clone=$(obj).clone();
+        $(clone).addClass('item-card-clone');
+ 
+        $(obj).bind("click", async function(e) {  
+            $(".item-card-clone").remove();
+            $(".item-card").removeClass("blackface");
+ 
+            $(clone)
+            .css("z-index", 1000)
+            .css("top", $(obj).position().top)
+            .css("left", $(obj).position().left);
+ 
+            $("#item-container").append(clone);
+ 
+            $(obj).addClass("blackface");
+ 
+            $(clone)
+            .css("position", "absolute")
+            .animate(
+                {
+                    height: '28rem',
+                    width: '16rem',
+                },
+                {
+                    step: function(now, fx) {
+                        $(clone).css('transform', "translateX(-1.7rem)");
+                    },
+                    done: function(){
+                        $(clone).children(".item-hover-info").show();
+                    },
+                    duration: 200
+                },
+                200
+            );
+ 
+            $(clone).bind("click", function(e){
+                $(clone).animate(
+                    {
+                        height: '18rem',
+                        width: '12rem',
+                    },
+                    {
+                        step: function(now, fx) {
+                            $(clone).css('transform', "translateX(0)");
+                        },
+                        done: function(){
+                            $(clone).remove();
+                            $(obj).removeClass("blackface");
+                        },
+                        duration: 200
+                    },
+                    200
+                );
+            });
+        });
     });
-}
+});
+ 
