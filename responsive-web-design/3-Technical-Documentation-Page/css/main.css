@@ -106,7 +106,7 @@ body {
   color: #cdbe91;
   border: 2px solid #C89B3C;
   border-radius: 10px;
-  font-size: large;
+  font-size: x-large;
   margin: 40px 0;
 }
 .main-doc .main-section .sub-header {
@@ -165,11 +165,11 @@ body {
   border-bottom: 2px ridge #C89B3C;
 }
 .champion-card h3 {
-  margin: 5px 0 0 0;
-  font-size: 18px;
+  margin: -4px 0 0 0;
+  font-size: 25px;
 }
 .champion-card p {
-  font-size: 14px;
+  font-size: 16px;
   margin: 5px 0 2px 0;
   color: #666;
 }
@@ -347,12 +347,12 @@ body {
   border-bottom: 2px ridge #C89B3C;
 }
 #item-container .item-card h3 {
-  margin: 5px 0 0 0;
+  margin: -2px 0 0 0;
   font-size: 18px;
 }
 #item-container .item-card p {
   font-size: 14px;
-  margin: 5px 0 2px 0;
+  margin: auto auto;
 }
 #item-container .item-card .item-cost {
   font-size: 18px;
