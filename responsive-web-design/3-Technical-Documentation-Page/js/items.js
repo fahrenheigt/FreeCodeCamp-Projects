@@ -68,14 +68,14 @@ $(document).ready(async function () {
             console.error('Error fetching the JSON file:', error);
         });
 
-    // Handle filter button click
-    $('#apply-filter').on('click', () => {
-        applyFilterAndSearch();
+    // Handle search input
+    $('#item-search').on('input', () => {
+        applyFilterAndSearch(); // Trigger search and filter on input
     });
 
-    // Handle search button click
-    $('#apply-search').on('click', () => {
-        applyFilterAndSearch();
+    // Handle filter button click
+    $('#apply-filter').on('click', () => {
+        applyFilterAndSearch(); // Trigger search and filter on filter change
     });
 
     // Function to display items in the container
@@ -121,30 +121,30 @@ $(document).ready(async function () {
     // Function to filter items based on selected statistic
     function filterItemsByStat(items, stat) {
         if (stat === 'All') {
-            return items; // Return all items if 'Display All' is selected
+            return items; // Return all items if 'All' is selected
         }
         return items.filter(item => item.stats[stat] && item.stats[stat] !== 0);
     }
 
-    // Function to filter items based on the search query
+    // Function to search items by name
     function searchItemsByName(items, searchTerm) {
         return items.filter(item => item.name.toLowerCase().includes(searchTerm.toLowerCase()));
     }
 
-    // Function to handle both filtering and searching
+    // Function to apply both filtering by stat and searching by name
     function applyFilterAndSearch() {
-        const selectedStat = $('#stat-filter').val();
-        const searchTerm = $('#search-bar').val().trim();
+        const selectedStat = $('#stat-filter').val(); // Get selected stat from the dropdown
+        const searchTerm = $('#item-search').val().trim(); // Get search term from the input
 
-        let filteredItems = filterItemsByStat(allItems, selectedStat);
+        let filteredItems = filterItemsByStat(allItems, selectedStat); // Filter by stat
         if (searchTerm) {
-            filteredItems = searchItemsByName(filteredItems, searchTerm);
+            filteredItems = searchItemsByName(filteredItems, searchTerm); // Filter by search term
         }
 
         displayItems(filteredItems); // Display filtered and/or searched items
     }
 
-    // Function to expand the item card
+    // Function to expand the item card (same as before)
     function expandItemCard(card) {
         var clone;
         clone = $(card).clone();
