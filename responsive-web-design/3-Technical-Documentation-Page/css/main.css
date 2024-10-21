@@ -135,6 +135,12 @@ body {
   width: 100%;
   margin: 0 auto;
 }
+.main-doc .main-section .code {
+  background-color: #f5f2f0;
+  color: #cdbe91;
+  border-radius: 20px;
+  padding: 1rem 4rem;
+}
 
 #champion-container {
   display: flex;
@@ -298,6 +304,38 @@ body {
   margin-left: 50px;
 }
 
+#champion-search {
+  cursor: pointer;
+  display: block;
+  text-align: center;
+  width: 80%;
+  padding: 10px 15px;
+  font-size: 20px;
+  font-family: "Marcellus SC", serif;
+  font-weight: bolder;
+  color: #cdbe91;
+  background: #1e2328;
+  box-shadow: inset 0 0 2px #000000;
+  background: linear-gradient(to bottom, #1e2328, #433d2b);
+  border-image-slice: 1;
+  border-width: 2px;
+  border-style: solid;
+  transition: all 0.3s;
+  letter-spacing: 1px;
+  margin: 40px auto;
+  border-radius: 5px;
+}
+#champion-search:hover, #champion-search:focus {
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.5019607843);
+  box-shadow: 0 0 8px 0 rgba(255, 255, 255, 0.3137254902);
+  outline: none;
+}
+
+#champion-search::placeholder {
+  color: #cdbe91;
+  opacity: 0.7;
+}
+
 .blackface, .blackface * {
   color: #010A13 !important;
   border-color: #010A13 !important;
@@ -310,7 +348,7 @@ body {
   filter: none !important;
 }
 
-.blackface > img {
+.blackface > div img {
   display: none;
 }
 
@@ -339,6 +377,12 @@ body {
   box-shadow: 0 4px 10px 2px #ffee10;
   filter: saturate(1.5);
 }
+#item-container .item-card .item-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
 #item-container .item-card .item-image {
   border-radius: 8px;
   width: 100%;
@@ -358,6 +402,27 @@ body {
   font-size: 18px;
   color: #ffd700;
 }
+#item-container .item-card .item-hover-info {
+  padding-bottom: 10px;
+  overflow-y: auto;
+}
+#item-container .item-card .item-stats {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin: 5px;
+  padding: 0;
+  list-style-type: none;
+  font-size: 18px;
+  color: #A09B8C;
+}
+#item-container .item-card .item-stats li {
+  margin: 0;
+  padding: 0;
+}
+#item-container .item-card .item-description {
+  font-size: large;
+}
 #item-container .clonedItem {
   display: none;
   z-index: 100;
@@ -370,4 +435,98 @@ body {
   box-shadow: 0 4px 10px 2px #ffee10;
   filter: saturate(1.5);
   transform: translateX(-15%);
+}
+
+#item-search {
+  cursor: pointer;
+  display: block;
+  text-align: center;
+  width: 80%;
+  padding: 10px 15px;
+  font-size: 20px;
+  font-family: "Marcellus SC", serif;
+  font-weight: bolder;
+  color: #cdbe91;
+  background: #1e2328;
+  box-shadow: inset 0 0 2px #000000;
+  background: linear-gradient(to bottom, #1e2328, #433d2b);
+  border-image-slice: 1;
+  border-width: 2px;
+  border-style: solid;
+  transition: all 0.3s;
+  letter-spacing: 1px;
+  margin: 0 auto 20px auto;
+  border-radius: 5px;
+}
+#item-search:hover, #item-search:focus {
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.5019607843);
+  box-shadow: 0 0 8px 0 rgba(255, 255, 255, 0.3137254902);
+  outline: none;
+}
+
+#item-search::placeholder {
+  color: #cdbe91;
+  opacity: 0.7;
+}
+
+#stat-filter {
+  width: 100%;
+  padding: 10px 15px;
+  font-size: 20px;
+  font-family: "Marcellus SC", serif;
+  font-weight: bolder;
+  color: #cdbe91;
+  background: #1e2328;
+  box-shadow: inset 0 0 2px #000000;
+  background: linear-gradient(to bottom, #1e2328, #433d2b);
+  border-image-slice: 1;
+  border-width: 2px;
+  border-style: solid;
+  transition: all 0.3s;
+  letter-spacing: 1px;
+  border-radius: 5px;
+  appearance: none; /* Remove default arrow for custom styling */
+  background-position: right 10px center;
+  background-repeat: no-repeat;
+}
+
+#stat-filter:focus {
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.5019607843);
+  box-shadow: 0 0 8px 0 rgba(255, 255, 255, 0.3137254902);
+  outline: none;
+  background: linear-gradient(to bottom, #433d2b, #1e2328); /* Inverse gradient on focus */
+}
+
+#stat-filter option {
+  background-color: #1e2328; /* Background for options */
+  border-bottom: 1px solid gold;
+  color: #cdbe91; /* Text color for options */
+  font-family: "Marcellus SC", serif;
+}
+
+#stat-filter::-ms-expand {
+  display: none;
+}
+
+#apply-filter {
+  padding: 10px 15px;
+  font-size: 20px;
+  font-family: "Marcellus SC", serif;
+  font-weight: bolder;
+  color: #cdbe91;
+  background: #1e2328;
+  box-shadow: inset 0 0 2px #000000;
+  background: linear-gradient(to bottom, #1e2328, #433d2b);
+  border-image-slice: 1;
+  border-width: 2px;
+  border-style: solid;
+  letter-spacing: 1px;
+  border-radius: 5px;
+  transition: all 0.3s;
+  /* Effet hover */
+}
+#apply-filter:hover {
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.5019607843);
+  box-shadow: 0 0 8px 0 rgba(255, 255, 255, 0.3137254902);
+  cursor: pointer;
 }/*# sourceMappingURL=main.css.map */

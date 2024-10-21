@@ -2,57 +2,71 @@ let allItems = []; // Store all items globally for filtering and searching
 
 // Stat mapping for user-friendly names
 const statMapping = {
-    "FlatArmorMod": "Flat Armor",
-    "rFlatArmorModPerLevel": "Armor per Level",
-    "PercentArmorMod": "Percent Armor",
-    "FlatMagicDamageMod": "Flat Magic Damage",
-    "PercentMagicDamageMod": "Percent Magic Damage",
-    "FlatMovementSpeedMod": "Flat Movement Speed",
-    "PercentMovementSpeedMod": "Percent Movement Speed",
-    "FlatHPPoolMod": "Flat Health",
-    "rFlatHPModPerLevel": "Health per Level",
-    "FlatHPRegenMod": "Flat Health Regeneration",
-    "rFlatHPRegenModPerLevel": "Health Regeneration per Level",
-    "PercentHPRegenMod": "Percent Health Regeneration",
-    "FlatMPPoolMod": "Flat Mana",
-    "rFlatMPModPerLevel": "Mana per Level",
-    "FlatMPRegenMod": "Flat Mana Regeneration",
-    "rFlatMPRegenModPerLevel": "Mana Regeneration per Level",
-    "PercentMPRegenMod": "Percent Mana Regeneration",
-    "FlatAttackSpeedMod": "Flat Attack Speed",
-    "PercentAttackSpeedMod": "Percent Attack Speed",
-    "FlatPhysicalDamageMod": "Flat Physical Damage",
-    "PercentPhysicalDamageMod": "Percent Physical Damage",
-    "FlatCritChanceMod": "Flat Critical Strike Chance",
-    "PercentCritChanceMod": "Percent Critical Strike Chance",
-    "FlatCritDamageMod": "Flat Critical Strike Damage",
-    "PercentCritDamageMod": "Percent Critical Strike Damage",
-    "FlatSpellBlockMod": "Flat Magic Resist",
-    "PercentSpellBlockMod": "Percent Magic Resist",
-    "FlatDodgeMod": "Flat Dodge Chance",
-    "FlatDodgeModPerLevel": "Dodge Chance per Level",
-    "FlatEXPBonus": "Flat Experience Bonus",
-    "PercentEXPBonus": "Percent Experience Bonus",
-    "FlatGoldPer10Mod": "Flat Gold per 10 Seconds",
-    "FlatEnergyRegenMod": "Flat Energy Regeneration",
-    "FlatEnergyPoolMod": "Flat Energy",
-    "rFlatEnergyRegenModPerLevel": "Energy Regeneration per Level",
-    "rFlatEnergyModPerLevel": "Energy per Level",
-    "PercentLifeStealMod": "Percent Life Steal",
-    "PercentSpellVampMod": "Percent Spell Vamp",
-    "rPercentCooldownMod": "Cooldown Reduction",
-    "rPercentCooldownModPerLevel": "Cooldown Reduction per Level",
-    "rFlatTimeDeadMod": "Time Dead Reduction",
-    "rFlatTimeDeadModPerLevel": "Time Dead Reduction per Level",
-    "rPercentTimeDeadMod": "Percent Time Dead Reduction",
-    "rPercentTimeDeadModPerLevel": "Percent Time Dead Reduction per Level",
-    "FlatBlockMod": "Flat Block",
-    "PercentBlockMod": "Percent Block",
-    "FlatPhysicalDamageMod": "Flat Physical Damage",
-    "FlatMagicPenetrationMod": "Flat Magic Penetration",
-    "FlatMagicPenetrationModPerLevel": "Magic Penetration per Level",
-    "PercentMagicPenetrationMod": "Percent Magic Penetration",
-    "PercentMagicPenetrationModPerLevel": "Percent Magic Penetration per Level"
+    "FlatHPPoolMod": "Health",
+    "rFlatHPModPerLevel": "Health per level",
+    "FlatMPPoolMod": "Mana",
+    "rFlatMPModPerLevel": "Mana per level",
+    "PercentHPPoolMod": "Health %",
+    "PercentMPPoolMod": "Mana %",
+    "FlatHPRegenMod":  "Health regen",
+    "rFlatHPRegenModPerLevel": "Health regen per level",
+    "PercentHPRegenMod": "Health regen %",
+    "FlatMPRegenMod": "Mana regen",
+    "rFlatMPRegenModPerLevel": "Mana regen per level",
+    "PercentMPRegenMod": "Mana regen %",
+    "FlatArmorMod": "Armor",
+    "rFlatArmorModPerLevel": "Armor per level",
+    "PercentArmorMod": "Armor %",
+    "FlatArmorPenetrationMod": "Lethality",
+    "rFlatArmorPenetrationModPerLevel": "Lethality per level",
+    "rPercentArmorPenetrationMod": "Armor penetration %",
+    "rPercentArmorPenetrationModPerLevel": "Armor penetration % per level",
+    "FlatPhysicalDamageMod": "Attack damage",
+    "rFlatPhysicalDamageModPerLevel": "Attack damage per level",
+    "PercentPhysicalDamageMod": "Attack damage %",
+    "FlatMagicDamageMod": "Ability power",
+    "rFlatMagicDamageModPerLevel": "Ability power per level",
+    "PercentMagicDamageMod": "Ability power %",
+    "FlatMovementSpeedMod": "Movement speed",
+    "rFlatMovementSpeedModPerLevel": "Movement speed per level",
+    "PercentMovementSpeedMod": "Movement speed %",
+    "rPercentMovementSpeedModPerLevel": "Movement speed % per level",
+    "FlatAttackSpeedMod": "Attack speed",
+    "PercentAttackSpeedMod": "Attack speed %",
+    "rPercentAttackSpeedModPerLevel": "Attack speed % per level",
+    "rFlatDodgeMod": "Dodge",
+    "rFlatDodgeModPerLevel": "Dodge per level",
+    "PercentDodgeMod": "Dodge %",
+    "FlatCritChanceMod": "Critical chance",
+    "rFlatCritChanceModPerLevel": "Critical chance per level",
+    "PercentCritChanceMod": "Critical chance %",
+    "FlatCritDamageMod": "Critical damage",
+    "rFlatCritDamageModPerLevel": "Critical damage per level",
+    "PercentCritDamageMod": "Critical damage %",
+    "FlatBlockMod": "Block",
+    "PercentBlockMod": "Block %",
+    "FlatSpellBlockMod": "Magic resist",
+    "rFlatSpellBlockModPerLevel": "Magic resist per level",
+    "PercentSpellBlockMod": "Magic resist %",
+    "FlatEXPBonus": "Experience",
+    "PercentEXPBonus": "Experience %",
+    "rPercentCooldownMod": "Cooldown reduction %",
+    "rPercentCooldownModPerLevel": "Cooldown reduction % per level",
+    "rFlatTimeDeadMod": "Time dead",
+    "rFlatTimeDeadModPerLevel": "Time dead per level",
+    "rPercentTimeDeadMod": "Time dead %",
+    "rPercentTimeDeadModPerLevel": "Time dead % per level",
+    "rFlatGoldPer10Mod": "Gold per 10",
+    "rFlatMagicPenetrationMod": "Magic Penetration",
+    "rFlatMagicPenetrationModPerLevel": "Magic Penetration per level",
+    "rPercentMagicPenetrationMod": "Magic Penetration %",
+    "rPercentMagicPenetrationModPerLevel": "Magic Penetration % per level",
+    "FlatEnergyRegenMod": "Energy regen",
+    "rFlatEnergyRegenModPerLevel": "Energy regen per level",
+    "FlatEnergyPoolMod": "Energy",
+    "rFlatEnergyModPerLevel": "Energy per level",
+    "PercentLifeStealMod": "Life steal %",
+    "PercentSpellVampMod": "Spell vamp %",
 };
  
 $(document).ready(async function () {
@@ -95,9 +109,12 @@ $(document).ready(async function () {
 
             // Generate HTML content for the item
             card.innerHTML = `
-                <img src="../images/item/${item.image.full}" alt="${item.name}" class="item-image">
-                <h3>${item.name}</h3>
-                <p class="item-cost">${item.gold.total}g</p>
+            <div class="item-container">
+                <div class="item-img-header">
+                    <img src="../images/item/${item.image.full}" alt="${item.name}" class="item-image">
+                    <h3>${item.name}</h3>
+                    <p class="item-cost">${item.gold.total}g</p>
+                </div>
                 <div class="item-hover-info" style="display: none;">
                     <ul class="item-stats">
                         ${Object.keys(item.stats).map(stat => `
@@ -106,6 +123,7 @@ $(document).ready(async function () {
                     </ul>
                     <p class="item-description">${item.plaintext}</p>
                 </div>
+            </div>
             `;
 
             // Append the card to the container
@@ -144,7 +162,7 @@ $(document).ready(async function () {
         displayItems(filteredItems); // Display filtered and/or searched items
     }
 
-    // Function to expand the item card (same as before)
+    // Function to expand the item card (cloning)
     function expandItemCard(card) {
         var clone;
         clone = $(card).clone();
@@ -174,7 +192,7 @@ $(document).ready(async function () {
                         $(clone).css('transform', "translateX(-1.7rem)");
                     },
                     done: function () {
-                        $(clone).children(".item-hover-info").show();
+                        $(clone).children().children(".item-hover-info").show();
                     },
                     duration: 200
                 },

@@ -4,6 +4,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="/js/champions.js"></script>
     <script src="/js/items.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
     <link rel="icon" type="Lol-logo" href="images/favicon.ico">
     <meta name="description" content="Explore detailed champion profiles with interactive cards and modals for League of Legends. View champion images, titles, spells, stats, and lore with smooth animations and popups.">
   </head>
@@ -106,6 +108,7 @@
             <label for="stat-filter">Filter by statistic:</label>
             <select id="stat-filter">
                 <option value="All">Display All</option>
+                <div class="separator"></div>
                 <option value="FlatMovementSpeedMod">Movement Speed</option>
                 <option value="FlatArmorMod">Armor</option>
                 <option value="FlatMagicDamageMod">Magic Damage</option>
@@ -175,37 +178,43 @@
         <p>There are eight base statistics that can increase through growth: attack damage, attack speed, armor, magic resistance, health, health regeneration, mana, and mana regeneration. Growth is non-linear and increases with champion level.</p>
         
         <h3>Formula for Champion Statistics at a Specific Level</h3>
-        <code>
+        <div class="code">
+          <code class="language-javascript">
             Statistic = base + bonus + g × (n - 1) × (0.7025 + 0.0175 × (n - 1)) <br>
             base = initial statistic value <br>
             bonus = bonus statistic from any source (runes, items, buffs, etc.) <br>
             g = growth statistic <br>
             n = current champion level <br>
             (n - 1) = total number of level ups
-        </code>
-    
+          </code>
+        </div>
         <p>Example: Alistar starts at level 1 with 685 health. His health growth is 120. At level 2:</p>
-        <code>
+        <div class="code">
+          <code class="language-javascript">
             Health = 685 + 120 × (2 - 1) × (0.7025 + 0.0175 × (2 - 1)) <br>
             Health = 771.4 (rounded to 771 in game)
-        </code>
+          </code>
+        </div>
     
         <h3>Attack Speed Calculations</h3>
         <p>Attack speed calculations use base attack speed, an attack speed ratio, and bonus attack speed percentages. The formula to calculate total attack speed is:</p>
-        <code>
+        <div class="code">
+          <code class="language-javascript">
             Total Attack Speed = baseAs + [bonusAs + g × (n - 1) × (0.7025 + 0.0175 × (n - 1))] × AsRatio <br>
             baseAs = base attack speed <br>
             AsRatio = attack speed ratio <br>
             g = percent bonus attack speed growth from leveling <br>
             bonusAs = sum of bonus attack speed from other sources <br>
             n = current champion level
-        </code>
-    
+          </code>
+        </div>
         <p>Example: Volibear at level 3 with his passive fully stacked:</p>
-        <code>
+        <div class="code">
+          <code class="language-javascript">
             Total Attack Speed = 0.625 + [0.25 + 0.02 × (3 - 1) × (0.7025 + 0.0175 × (3 - 1))] × 0.7 <br>
             Total Attack Speed = 0.625 + 0.19565 = 0.82065
-        </code>
+          </code>
+        </div>
     </section>
     
     </main>

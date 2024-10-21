@@ -134,5 +134,13 @@ body{
             width: 100%;
             margin: 0 auto;
         }
+
+        .code{
+            background-color: #f5f2f0;
+            color: $text-one;
+            border-radius: 20px;
+            padding: 1rem 4rem;
+            
+        }
     }
 }
