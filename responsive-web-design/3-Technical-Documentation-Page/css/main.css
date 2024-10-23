@@ -25,6 +25,11 @@
   background-color: #010A13;
 }
 
+abbr {
+  -webkit-text-decoration: dotted underline #C89B3C;
+          text-decoration: dotted underline #C89B3C;
+}
+
 .display-none {
   display: none;
 }
