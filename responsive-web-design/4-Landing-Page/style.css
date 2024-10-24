@@ -356,23 +356,23 @@ img {
   display: block;
 }
 
-/*=============== CASE ===============*/
-.case__container {
+/*=============== Accessories ===============*/
+.accessories__container {
   position: relative;
   grid-template-columns: repeat(2, 1fr);
 }
 
-.case__data {
+.accessories__data {
   padding: 5rem 0 3rem;
 }
 
-.case__img {
+.accessories__img {
   width: 250px;
   position: absolute;
   left: -7rem;
 }
 
-.case__description {
+.accessories__description {
   margin-bottom: var(--mb-1-5);
   line-height: var(--text-line-height);
 }
@@ -600,15 +600,15 @@ img {
   .specs__img {
     width: 200px;
   }
-  .case__container {
+  .accessories__container {
     grid-template-columns: .6fr 1fr;
   }
-  .case__img {
+  .accessories__img {
     width: 220px;
     top: -2rem;
     left: -9rem;
   }
-  .case__data {
+  .accessories__data {
     padding: 0;
   }
   .products__container {
@@ -637,13 +637,13 @@ img {
     justify-items: center;
     align-items: center;
   }
-  .case__img {
+  .accessories__img {
     position: initial;
   }
-  .case__data {
+  .accessories__data {
     padding: 0;
   }
-  .case__container {
+  .accessories__container {
     grid-template-columns: max-content 250px;
     justify-content: center;
     align-items: center;
@@ -701,13 +701,13 @@ img {
   .specs__img {
     width: 300px;
   }
-  .case__container {
+  .accessories__container {
     column-gap: 5rem;
   }
-  .case__img {
+  .accessories__img {
     width: 300px;
   }
-  .case__description {
+  .accessories__description {
     margin-bottom: var(--mb-2);
   }
   .discount__container {
