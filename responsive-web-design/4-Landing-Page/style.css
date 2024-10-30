@@ -13,7 +13,7 @@
   --white-color: #FFF;
   --body-color: hsl(var(--hue-color), 4%, 6%);
   --container-color: hsl(var(--hue-color), 4%, 10%);
-  --text-gradient: linear-gradient(hsl(var(--hue-color), 4%, 24%), hsl(var(--hue-color), 4%, 8%));
+  --text-gradient: linear-gradient(hsl(var(--hue-color), 8%, 48%), hsl(var(--hue-color), 8%, 16%));
   --scroll-thumb-color: hsl(var(--hue-color), 4%, 16%);
   --scroll-thumb-color-alt: hsl(var(--hue-color), 4%, 20%);
   /*========== Font and typography ==========*/
@@ -154,7 +154,7 @@ img {
 
 .nav__logo {
   display: flex;
-  width: 150px !important;
+  width: 60px !important;
 }
 
 .nav__toggle {
