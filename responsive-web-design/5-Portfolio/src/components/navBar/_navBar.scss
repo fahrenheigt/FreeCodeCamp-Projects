@@ -1,17 +1,21 @@
 .navBar {
     position: fixed;
-    top: 25%;
-    left: 0;
-    height: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+    height: 28rem;
     width: 0; // largeur initiale pour le menu fermé
     overflow: hidden;
-    background-color: #333;
+    background-color: $accent-color-two; // couleur de fond du menu
     transition: width 0.5s ease;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    border-radius: 0 25px 25px 0;
+    border-radius:  25px 0 0 25px ;
+    filter: drop-shadow(0 0 0.75rem $color-primary);
+    border: solid $color-primary;
+    border-width: 2px 2px 2px 0;
 
     .navBarLinks {
         height: 100%;
@@ -25,16 +29,13 @@
         width: 100%;
         display: flex;
         align-items: center;
-        color: white;
+        color: $color-white; // couleur du texte
         text-decoration: none;
-        font-size: 18px;
+        font-size: 3rem;
         transition: color 0.3s;
-        padding-bottom: 15px;
-        margin-left: -10px;
-        border-bottom: 1px solid #ddd;
 
         &:hover {
-            color: #ddd;
+            filter: drop-shadow(0 0 0.75rem $color-quaternary);
         }
 
         &:last-child {
@@ -51,14 +52,28 @@
 .navBarIcon {
     position: fixed;
     top: 20px;
-    left: 20px;
-    font-size: 24px;
+    right: 20px;
+    font-size: 36px;
     cursor: pointer;
     z-index: 1001; // pour être au-dessus du menu
-    color: black; // couleur initiale de l'icône
+    color: $color-white; // couleur initiale de l'icône
     transition: color 0.3s; // transition douce pour la couleur
+}
 
-    &.open {
-        transform: scale(1.1);
+//Responsive
+
+@media screen and (min-width: 768px) {
+    .navBar {
+        left: 0px;
+        border-radius:  0 25px 25px 0 ;
+        border-width: 2px 0px 2px 2px;
+    }
+
+    .navBarIcon {
+        left: 20px;
+
+        &.open {
+            left: 20px;
+        }
     }
 }

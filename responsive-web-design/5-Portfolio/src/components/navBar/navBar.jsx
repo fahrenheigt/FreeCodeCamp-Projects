@@ -12,7 +12,7 @@ import { FaPhoneFlip } from "react-icons/fa6";
 
 export default function NavBar() {
     const [navBarOpen, setNavBarOpen] = useState(false);
-
+    const navBarWidth = 90; // Largeur de la barre de navigation
     const toggleNavBar = () => {
         setNavBarOpen((prev) => !prev);
     };
@@ -20,12 +20,18 @@ export default function NavBar() {
     useEffect(() => {
         const navBar = document.querySelector(".navBar");
         const navBarLinks = document.querySelectorAll(".navBarLinks a");
+        const translateOpenMobile = [120, 20];
+        const translateCloseMobile = [20, 120];
+        const translateOpenDesktop = [-120, 20];
+        const translateCloseDesktop = [20, -120];
+
+        const desktop = window.matchMedia("(min-width: 768px)").matches;
         
         // Anime l'ouverture et la fermeture de la barre de navigation
         anime({
             targets: navBar,
-            width: navBarOpen ? "110px" : "0px",
-            duration: 800,
+            width: navBarOpen ? `${navBarWidth}px` : "0px",
+            duration: 100,
             easing: "easeInOutQuad",
         });
 
@@ -33,17 +39,15 @@ export default function NavBar() {
         if (navBarOpen) {
             anime({
                 targets: navBarLinks,
-                translateX: [120, 20],
+                translateX: desktop ? translateOpenDesktop : translateOpenMobile,
                 opacity: [0, 1],
-                duration: 1500,
                 easing: "easeInOutQuad",
-                delay: anime.stagger(200), // Échelonnement pour chaque lien
+                delay: anime.stagger(100), // Échelonnement pour chaque lien
             });
         } else {
             anime({
                 targets: navBarLinks,
-                translateX: [0, 120],
-                duration: 1500,
+                translateX: desktop ? translateCloseDesktop : translateCloseMobile,
                 easing: "easeInOutQuad",
                 delay: anime.stagger(100), // Échelonnement pour chaque lien
             });
@@ -53,27 +57,22 @@ export default function NavBar() {
     return (
         <>
             <div className={`navBar ${navBarOpen ? "open" : ""}`}>
-                {navBarOpen && (
+                {true && (
                     <div className="navBarLinks">
                         <a href="#home" className="navBarLink">
                             <FaHome />
-                            <p>Home</p>
                         </a>
                         <a href="#about" className="navBarLink">
                             <FaInfoCircle />
-                            <p>About</p>
                         </a>
                         <a href="#skills" className="navBarLink">
                             <FaLaptopCode />
-                            <p>Skills</p>
                         </a>
                         <a href="#projects" className="navBarLink">
                             <FaProjectDiagram />
-                            <p>Projects</p>
                         </a>
                         <a href="#contact" className="navBarLink">
                             <FaPhoneFlip />
-                            <p>Contact</p>
                         </a>
                     </div>
                 )}
