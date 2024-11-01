@@ -1,7 +1,11 @@
-body {
+* {
   margin: 0;
-  background: url("../../assets/images/background2.svg") no-repeat center center fixed;
-  background-size: cover;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #0b0b0d;
 }
 
 .navBar {
@@ -12,7 +16,7 @@ body {
   height: 28rem;
   width: 0;
   overflow: hidden;
-  background-color: #f5b301;
+  background: #0b0b0d;
   transition: width 0.5s ease;
   display: flex;
   flex-direction: column;
@@ -20,8 +24,11 @@ body {
   justify-content: center;
   border-radius: 25px 0 0 25px;
   filter: drop-shadow(0 0 0.75rem #0b0b0d);
-  border: solid #0b0b0d;
-  border-width: 2px 2px 2px 0;
+  z-index: 1000;
+}
+.navBar.open {
+  border: solid #f49f00;
+  border-width: 2px 0px 2px 2px;
 }
 .navBar .navBarLinks {
   height: 100%;
@@ -65,7 +72,9 @@ body {
   .navBar {
     left: 0px;
     border-radius: 0 25px 25px 0;
-    border-width: 2px 0px 2px 2px;
+  }
+  .navBar.open {
+    border-width: 2px 2px 2px 0px;
   }
   .navBarIcon {
     left: 20px;
@@ -73,4 +82,45 @@ body {
   .navBarIcon.open {
     left: 20px;
   }
+}
+.home-container {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #0b0b0d;
+}
+
+.container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.block {
+  position: relative;
+  width: 50px;
+  min-width: 50px;
+  height: 100px;
+  background-color: #181619;
+  box-shadow: 10px 10px 50px #0b0b0d;
+}
+
+h2 {
+  font-size: 2rem;
+  color: #f4f4f4;
+  text-align: center;
+  line-height: 1em;
+  z-index: 1000;
+  font-weight: 900;
+  position: absolute;
 }/*# sourceMappingURL=main.css.map */
