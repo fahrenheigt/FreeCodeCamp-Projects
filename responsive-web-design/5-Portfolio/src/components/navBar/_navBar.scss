@@ -35,13 +35,13 @@
         width: 100%;
         display: flex;
         align-items: center;
-        color: $color-white; // couleur du texte
+        color: $gold-one; // couleur du texte
         text-decoration: none;
         font-size: 3rem;
-        transition: color 0.3s;
+        transition: filter 0.3s; // transition douce pour les propriétés
 
         &:hover {
-            filter: drop-shadow(0 0 0.75rem $color-quaternary);
+            filter: drop-shadow(0 0 0.75rem $gold-two);
         }
 
         &:last-child {
@@ -63,7 +63,11 @@
     cursor: pointer;
     z-index: 1001; // pour être au-dessus du menu
     color: $color-white; // couleur initiale de l'icône
-    transition: color 0.3s; // transition douce pour la couleur
+    transition: filter 0.3s; // transition douce pour la couleur
+    
+    &:hover {
+        filter: drop-shadow(0 0 0.75rem $gold-two);
+    }
 }
 
 //Responsive

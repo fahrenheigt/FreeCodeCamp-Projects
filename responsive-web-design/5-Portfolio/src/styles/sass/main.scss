@@ -1,3 +1,4 @@
+//Base SCSS
 @import "_variables.scss";
 @import "_base.scss";
 
@@ -7,3 +8,14 @@
 //Pages
 @import "../../pages/contact/contact.scss";
 @import "../../pages/home/home.scss";
+
+//Fonts
+@font-face {
+    font-family:BeaufortforLOL-Bold; ;
+    src: url('../../assets/fonts/beaufort-for-lol/BeaufortforLOL-Bold.ttf');
+    font-family:BeaufortforLOL-Medium; ;
+    src: url('../../assets/fonts/beaufort-for-lol/BeaufortforLOL-Medium.ttf');
+    font-family:Spiegelregular;
+    src: url('../../assets/fonts/spiegel-sans-regular.otf');
+    font-family:Spiegelbold;
+}

@@ -41,13 +41,13 @@ body {
   width: 100%;
   display: flex;
   align-items: center;
-  color: #f4f4f4;
+  color: #F0E6D2;
   text-decoration: none;
   font-size: 3rem;
-  transition: color 0.3s;
+  transition: filter 0.3s;
 }
 .navBar .navBarLink:hover {
-  filter: drop-shadow(0 0 0.75rem #272a31);
+  filter: drop-shadow(0 0 0.75rem #C8AA6E);
 }
 .navBar .navBarLink:last-child {
   border-bottom: none;
@@ -65,7 +65,10 @@ body {
   cursor: pointer;
   z-index: 1001;
   color: #f4f4f4;
-  transition: color 0.3s;
+  transition: filter 0.3s;
+}
+.navBarIcon:hover {
+  filter: drop-shadow(0 0 0.75rem #C8AA6E);
 }
 
 @media screen and (min-width: 768px) {
@@ -92,21 +95,23 @@ body {
   width: 100%;
   min-height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #0b0b0d;
+  gap: 20px;
+  background-color: #181619;
+  font-family: beaufortforlol-medium;
+  color: #F0E6D2;
 }
-
-.container {
+.home-container .container {
   position: absolute;
-  width: 100%;
+  width: 80%;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
-.block {
+.home-container .block {
   position: relative;
   width: 50px;
   min-width: 50px;
@@ -114,13 +119,29 @@ body {
   background-color: #181619;
   box-shadow: 10px 10px 50px #0b0b0d;
 }
-
-h2 {
-  font-size: 2rem;
-  color: #f4f4f4;
+.home-container h1 {
+  font-size: 10rem;
   text-align: center;
   line-height: 1em;
   z-index: 1000;
   font-weight: 900;
-  position: absolute;
+  cursor: default;
+}
+.home-container h2 {
+  font-size: 5rem;
+  text-align: center;
+  line-height: 1em;
+  z-index: 1000;
+  font-weight: 900;
+  cursor: default;
+}
+
+@font-face {
+  font-family: BeaufortforLOL-Bold;
+  src: url("../../assets/fonts/beaufort-for-lol/BeaufortforLOL-Bold.ttf");
+  font-family: BeaufortforLOL-Medium;
+  src: url("../../assets/fonts/beaufort-for-lol/BeaufortforLOL-Medium.ttf");
+  font-family: Spiegelregular;
+  src: url("../../assets/fonts/spiegel-sans-regular.otf");
+  font-family: Spiegelbold;
 }/*# sourceMappingURL=main.css.map */
