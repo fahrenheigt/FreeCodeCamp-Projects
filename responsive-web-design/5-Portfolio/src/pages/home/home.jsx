@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
 import anime from "animejs";
+import { motion } from "framer-motion";
 
-export default function Home() {
+export default function Home({ observerRef }) {
     useEffect(() => {
         const container = document.querySelector('.container');
         
@@ -16,15 +17,9 @@ export default function Home() {
         function animateBlocks() {
             anime({
                 targets: '.block',
-                translateX: function () {
-                    return anime.random(-700, 700);
-                },
-                translateY: function () {
-                    return anime.random(-500, 500);
-                },
-                scale: function () {
-                    return anime.random(1,5);
-                },
+                translateX: () => anime.random(-700, 700),
+                translateY: () => anime.random(-500, 500),
+                scale: () => anime.random(1,5),
                 easing: 'easeOutElastic(1, .8)',
                 duration: 3000,
                 delay: anime.stagger(20),
@@ -34,16 +29,19 @@ export default function Home() {
 
         // Démarrer l'animation
         animateBlocks();
-    }, []); // Le tableau vide garantit que l'effet ne s'exécute qu'une fois après le premier rendu
+    }, []); 
     
     return (
-        <>
-        <div className='home-container'>
-            <div className='container'>
-            </div>
+        <motion.div
+            className="home-container"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.3 }}
+        >
+            <div className='container'></div>
             <h1>Axel Le Meur</h1>
             <h2>Web Developer</h2>
-        </div>
-        </>
+        </motion.div>
     );
 }

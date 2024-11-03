@@ -1,13 +1,27 @@
-import React from "react";
-import { Routes, Route } from "react-router-dom";
+// Import necessary libaries
+import React, { useEffect } from "react";
+import { BrowserRouter as Router,Routes, Route, useNavigate } from "react-router-dom";
+
+// Import functions
+import ScrollToTop from "./assets/functions/ScrollToTop";
+
+// Import pages
 import Home from "./pages/home/home";
+import About from "./pages/about/about";
+
+// Import components
 import NavBar from "./components/navBar/navBar";
 
 function App(){
+
     return (
-    <div className="app">
+    <div className="App">
+        <ScrollToTop />
         <NavBar></NavBar>
-        <Home id="home"></Home>
+        <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+        </Routes>
     </div>
     )
 }

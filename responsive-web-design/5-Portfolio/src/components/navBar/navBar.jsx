@@ -59,19 +59,19 @@ export default function NavBar() {
             <div className={`navBar ${navBarOpen ? "open" : ""}`}>
                 {true && (
                     <div className="navBarLinks">
-                        <a href="#home" className="navBarLink">
+                        <a href="/" className="navBarLink">
                             <FaHome />
                         </a>
-                        <a href="#about" className="navBarLink">
+                        <a href="/about" className="navBarLink">
                             <FaInfoCircle />
                         </a>
-                        <a href="#skills" className="navBarLink">
+                        <a href="/skills" className="navBarLink">
                             <FaLaptopCode />
                         </a>
-                        <a href="#projects" className="navBarLink">
+                        <a href="/projects" className="navBarLink">
                             <FaProjectDiagram />
                         </a>
-                        <a href="#contact" className="navBarLink">
+                        <a href="/contact" className="navBarLink">
                             <FaPhoneFlip />
                         </a>
                     </div>

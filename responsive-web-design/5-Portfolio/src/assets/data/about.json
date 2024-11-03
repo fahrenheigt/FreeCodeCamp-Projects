@@ -1,0 +1,38 @@
+{
+    "interests": [
+      {
+        "name": "Développement Web",
+        "description": "Passion pour la création de sites et d'applications web, notamment avec React et JavaScript.",
+        "picture": "gaming.png"
+      },
+      {
+        "name": "Design Graphique",
+        "description": "Intérêt pour le design et l'esthétique, en particulier dans le design d'interface utilisateur.",
+        "picture": "gaming.png"
+      },
+      {
+        "name": "Gaming",
+        "description": "Amateur de jeux vidéo, particulièrement des jeux de stratégie et des RPG.",
+        "picture": "gaming.png"
+      }
+    ],
+    "experience": [
+      {
+        "title": "Développeur Web",
+        "company": "MonEntreprise",
+        "startDate": "Janvier 2022",
+        "endDate": "Présent",
+        "description": "Développement de plusieurs projets web en utilisant React et Node.js.",
+        "picture": "gaming.png"
+      },
+      {
+        "title": "Stagiaire Développeur",
+        "company": "AutreEntreprise",
+        "startDate": "Mai 2021",
+        "endDate": "Août 2021",
+        "description": "Assistance dans le développement d'applications web et de tests unitaires.",
+        "picture": "gaming.png"
+      }
+    ]
+  }
+  

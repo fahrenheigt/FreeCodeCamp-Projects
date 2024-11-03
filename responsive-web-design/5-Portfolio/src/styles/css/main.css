@@ -86,6 +86,18 @@ body {
     left: 20px;
   }
 }
+.interests-container .interests .interest img {
+  width: 200px;
+  height: 250px;
+  object-fit: cover;
+}
+
+.experience-container .experiences .experience img {
+  width: 200px;
+  height: 250px;
+  object-fit: cover;
+}
+
 .home-container {
   margin: 0;
   padding: 0;
@@ -134,6 +146,30 @@ body {
   z-index: 1000;
   font-weight: 900;
   cursor: default;
+}
+
+.home-end {
+  margin-top: 120vh;
+}
+
+/* about.scss */
+.about-container {
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  color: #F0E6D2;
+}
+
+.about-container h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.about-container p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
 }
 
 @font-face {

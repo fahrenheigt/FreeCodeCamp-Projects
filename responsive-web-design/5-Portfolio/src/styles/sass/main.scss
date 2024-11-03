@@ -4,10 +4,14 @@
 
 //Components
 @import "../../components/navBar/navBar.scss";
+@import "../../components/interests/interests.scss";
+@import"../../components/experience/experience.scss";
 
 //Pages
 @import "../../pages/contact/contact.scss";
 @import "../../pages/home/home.scss";
+@import "../../pages/about/about.scss";
+@import "../../pages/projects/projects.scss";
 
 //Fonts
 @font-face {
