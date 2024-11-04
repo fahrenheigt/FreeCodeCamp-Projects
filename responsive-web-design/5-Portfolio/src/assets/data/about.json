@@ -23,7 +23,8 @@
         "startDate": "Janvier 2022",
         "endDate": "Présent",
         "description": "Développement de plusieurs projets web en utilisant React et Node.js.",
-        "picture": "gaming.png"
+        "picture": "gaming.png",
+        "order": 1
       },
       {
         "title": "Stagiaire Développeur",
@@ -31,7 +32,8 @@
         "startDate": "Mai 2021",
         "endDate": "Août 2021",
         "description": "Assistance dans le développement d'applications web et de tests unitaires.",
-        "picture": "gaming.png"
+        "picture": "gaming.png",
+        "order": 2
       }
     ]
   }

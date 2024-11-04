@@ -2,12 +2,12 @@ import React, { useEffect } from 'react';
 import anime from "animejs";
 import { motion } from "framer-motion";
 
-export default function Home({ observerRef }) {
+export default function Home({}) {
     useEffect(() => {
         const container = document.querySelector('.container');
         
         // Créer et ajouter les blocs
-        for (var i = 0; i < 80; i++) {
+        for (var i = 0; i < 50; i++) {
             const blocks = document.createElement('div');
             blocks.classList.add('block');
             container.appendChild(blocks);
@@ -17,8 +17,8 @@ export default function Home({ observerRef }) {
         function animateBlocks() {
             anime({
                 targets: '.block',
-                translateX: () => anime.random(-700, 700),
-                translateY: () => anime.random(-500, 500),
+                translateX: () => anime.random(-window.screen.width/2, window.screen.width/2),
+                translateY: () => anime.random(-window.screen.height/2, window.screen.height/2),
                 scale: () => anime.random(1,5),
                 easing: 'easeOutElastic(1, .8)',
                 duration: 3000,
@@ -40,8 +40,12 @@ export default function Home({ observerRef }) {
             transition={{ duration: 0.3 }}
         >
             <div className='container'></div>
-            <h1>Axel Le Meur</h1>
-            <h2>Web Developer</h2>
+            <div className='blur'></div>
+            <div className='overlay'>
+                <h1>Axel Le Meur</h1>
+                <h2>Web Developer</h2>
+            </div>
+
         </motion.div>
     );
 }

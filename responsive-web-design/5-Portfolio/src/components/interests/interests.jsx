@@ -7,8 +7,8 @@ const Interests = () => {
 
   return (
     <div className='interests-container'>
+                  <h2>Centres d'intérêts</h2>
         <div className='interests'>
-            <h2>Centres d'intérêts</h2>
             {data.interests.map((interest, index) => (
                 <div key={index} className='interest'>
                 <h3>{interest.name}</h3>

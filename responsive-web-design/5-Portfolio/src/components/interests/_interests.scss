@@ -1,8 +1,17 @@
 .interests-container{
+    width: 100%;
 
     .interests{
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
 
         .interest{
+            width: 30%;
+            height: auto;
+            border: 2px solid $gold-three;
+            border-radius: 20px;
+            
 
             img{
                 width: 200px;
