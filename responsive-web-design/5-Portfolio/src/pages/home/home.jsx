@@ -7,7 +7,7 @@ export default function Home({}) {
         const container = document.querySelector('.container');
         
         // Créer et ajouter les blocs
-        for (var i = 0; i < 50; i++) {
+        for (var i = 0; i < 70; i++) {
             const blocks = document.createElement('div');
             blocks.classList.add('block');
             container.appendChild(blocks);
