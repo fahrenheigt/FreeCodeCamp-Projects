@@ -17,3 +17,47 @@ $gold-one: #F0E6D2;
 $gold-two: #C8AA6E;
 $gold-three:#C89B3C;
 $gold-four:#32281E;
+
+// Palette de couleurs
+$color-orange-dark: #FF7F11;
+$color-red-bright: #FF3C00;
+$color-yellow-gold: #FFC300;
+$color-black-smoke: #2A2A2A;
+$color-gray-light: #F2F2F2;
+$color-white-off: #F5F5F5;
+$color-gray-secondary: #D1D1D1;
+
+// Arrière-plan principal (gradient)
+$background-gradient: linear-gradient(135deg, $color-black-smoke 0%, $color-orange-dark 50%, $color-red-bright 100%);
+
+// Gradient pour les cartes ou sections
+$section-gradient: linear-gradient(145deg, $color-yellow-gold, $color-orange-dark);
+
+// Couleurs de texte
+$text-primary: $color-white-off;         // Couleur principale du texte
+$text-secondary: $color-gray-secondary;  // Couleur secondaire du texte
+$text-highlight: $color-yellow-gold;     // Couleur pour les surbrillances ou accents
+
+// Effet de surbrillance pour le texte principal
+$text-primary-shadow: 0 0 5px $color-orange-dark, 0 0 10px $color-red-bright;
+
+// Effet néon pour les titres ou boutons
+$neon-effect: 0 0 5px $color-yellow-gold, 0 0 10px $color-orange-dark, 0 0 20px $color-red-bright;
+
+// Ombres pour les éléments interactifs
+$interactive-shadow: 0 4px 6px -1px rgba(255, 124, 0, 0.3), 0 2px 4px -1px rgba(255, 60, 0, 0.3);
+
+// Couleurs pour la box-shadow
+$box-shadow-white: #FFF;
+$box-shadow-yellow: #FF0;
+$box-shadow-orange: #FF8000;
+$box-shadow-red: red;
+$box-shadow-inset-black: rgba(0, 0, 0, 0);
+
+// Variable pour la box-shadow complexe
+$complex-box-shadow: 
+  $box-shadow-white 0 -1px 4px,
+  $box-shadow-yellow 0 -2px 10px,
+  $box-shadow-orange 0 -10px 20px,
+  $box-shadow-red 0 -18px 40px,
+  inset 0px 0px 50px -1px $box-shadow-inset-black;

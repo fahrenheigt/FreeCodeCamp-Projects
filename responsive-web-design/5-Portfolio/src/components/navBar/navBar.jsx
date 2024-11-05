@@ -22,8 +22,8 @@ export default function NavBar() {
         const navBarLinks = document.querySelectorAll(".navBarLinks a");
         const translateOpenMobile = [120, 20];
         const translateCloseMobile = [20, 120];
-        const translateOpenDesktop = [-120, 20];
-        const translateCloseDesktop = [20, -120];
+        const translateOpenDesktop = [-120, 15];
+        const translateCloseDesktop = [15, -120];
 
         const desktop = window.matchMedia("(min-width: 768px)").matches;
         
