@@ -1,5 +1,6 @@
+$background-dark: #1a1a2e;
 .skills-container{
-    background-image: url('../../assets/images/background2.svg');
+    background: $background-dark;
     background-size: cover;
     margin: 0;
     padding: 0;

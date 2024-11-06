@@ -1,0 +1,34 @@
+{
+  "technologies": [
+    {
+      "id": 1,
+      "name": "HTML",
+      "description": "Langage de base pour la structure des pages web.",
+      "picture": "gaming.png"
+    },
+    {
+      "id": 2,
+      "name": "CSS",
+      "description": "Langage de style pour la mise en forme des pages web.",
+      "picture": "gaming.png"
+    },
+    {
+      "id": 3,
+      "name": "JavaScript",
+      "description": "Langage de programmation pour rendre les pages web interactives.",
+      "picture": "gaming.png"
+    },
+    {
+      "id": 4,
+      "name": "React",
+      "description": "Bibliothèque JavaScript pour la création d'interfaces utilisateurs dynamiques.",
+      "picture": "gaming.png"
+    },
+    {
+      "id": 5,
+      "name": "SCSS",
+      "description": "Préprocesseur CSS offrant des fonctionnalités avancées pour les feuilles de style.",
+      "picture": "gaming.png"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+    "certifications": [
+      {
+        "id": 1,
+        "title": "Responsive Web Design",
+        "issuer": "freeCodeCamp",
+        "date": "2023-01-15",
+        "picture": "gaming.png"
+      },
+      {
+        "id": 2,
+        "title": "JavaScript Algorithms and Data Structures",
+        "issuer": "freeCodeCamp",
+        "date": "2023-06-10",
+        "picture": "gaming.png"
+      },
+      {
+        "id": 3,
+        "title": "Front End Development Libraries",
+        "issuer": "freeCodeCamp",
+        "date": "2023-09-20",
+        "picture": "gaming.png"
+      }
+    ]
+  }
+  
