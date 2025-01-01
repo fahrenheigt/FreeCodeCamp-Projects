@@ -6,19 +6,17 @@
     height: 28rem;
     width: 0; // largeur initiale pour le menu fermé
     overflow: hidden;
-    background: $color-primary;
+    background: $bg-modal-yellow;
     transition: width 0.5s ease;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    border-radius:  25px 0 0 25px ;
-    box-shadow: $interactive-shadow;
     z-index: 1000; // pour être au-dessus du contenu
 
 
     &.open{
-        border: solid $accent-color;
+        border: solid $bg-modal-red; // bordure du menu ouvert
         border-width: 2px 0px 2px 2px ;
     }
 
@@ -35,13 +33,13 @@
         width: 100%;
         display: flex;
         align-items: center;
-        color: $gold-one; // couleur du texte
+        color: $text-dark-blue; // couleur du texte
         text-decoration: none;
         font-size: 3rem;
         transition: filter 0.3s; // transition douce pour les propriétés
 
         &:hover {
-            filter: drop-shadow(0 0 0.75rem $gold-three);
+            filter: drop-shadow(0 0 0.75rem $text-dark-blue);
         }
 
         &:last-child {
@@ -62,11 +60,11 @@
     font-size: 36px;
     cursor: pointer;
     z-index: 1001; // pour être au-dessus du menu
-    color: $color-white; // couleur initiale de l'icône
+    color: $bg-modal-red; // couleur initiale de l'icône
     transition: filter 0.3s; // transition douce pour la couleur
     
     &:hover {
-        filter: drop-shadow(0 0 0.75rem $gold-two);
+        filter: drop-shadow(0 0 0.75rem $text-dark-blue);
     }
 }
 
@@ -75,7 +73,6 @@
 @media screen and (min-width: 768px) {
     .navBar {
         left: 0px;
-        border-radius:  0 25px 25px 0 ;
 
         &.open {
             border-width: 2px 2px 2px 0px;

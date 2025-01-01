@@ -5,7 +5,7 @@
 }
 
 body {
-  background-color: #0b0b0d;
+  background-color: #0a0a0f;
 }
 
 .navBar {
@@ -16,18 +16,17 @@ body {
   height: 28rem;
   width: 0;
   overflow: hidden;
-  background: #0b0b0d;
+  background: #0a0a0f;
   transition: width 0.5s ease;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
   border-radius: 25px 0 0 25px;
-  box-shadow: 0 4px 6px -1px rgba(255, 124, 0, 0.3), 0 2px 4px -1px rgba(255, 60, 0, 0.3);
   z-index: 1000;
 }
 .navBar.open {
-  border: solid #f49f00;
+  border: solid #ff007f;
   border-width: 2px 0px 2px 2px;
 }
 .navBar .navBarLinks {
@@ -41,13 +40,13 @@ body {
   width: 100%;
   display: flex;
   align-items: center;
-  color: #F0E6D2;
+  color: #e6e2d9;
   text-decoration: none;
   font-size: 3rem;
   transition: filter 0.3s;
 }
 .navBar .navBarLink:hover {
-  filter: drop-shadow(0 0 0.75rem #C89B3C);
+  filter: drop-shadow(0 0 0.75rem #b87d43);
 }
 .navBar .navBarLink:last-child {
   border-bottom: none;
@@ -64,11 +63,11 @@ body {
   font-size: 36px;
   cursor: pointer;
   z-index: 1001;
-  color: #f4f4f4;
+  color: #e3e3e3;
   transition: filter 0.3s;
 }
 .navBarIcon:hover {
-  filter: drop-shadow(0 0 0.75rem #C8AA6E);
+  filter: drop-shadow(0 0 0.75rem #d4ab7a);
 }
 
 @media screen and (min-width: 768px) {
@@ -97,7 +96,7 @@ body {
 .interests-container .interests .interest {
   width: 30%;
   height: auto;
-  border: 2px solid #C89B3C;
+  border: 2px solid #b87d43;
   border-radius: 20px;
 }
 .interests-container .interests .interest img {
@@ -231,9 +230,9 @@ body {
   justify-content: center;
   align-items: center;
   gap: 20px;
-  background-color: #181619;
+  background-color: #1b1c2b;
   font-family: "Montserrat", sans-serif;
-  color: #F0E6D2;
+  color: #e6e2d9;
 }
 .home-container .container {
   position: absolute;
@@ -267,15 +266,13 @@ body {
   width: 35%;
   object-fit: cover;
   border-radius: 50%;
-  box-shadow: #FFF 0 -1px 4px, #FF0 0 -2px 10px, #FF8000 0 -10px 20px, red 0 -18px 40px, inset 0px 0px 50px -1px rgba(0, 0, 0, 0);
 }
 .home-container .block {
   position: relative;
   width: 50px;
   min-width: 50px;
   height: 100px;
-  background-color: #C89B3C;
-  box-shadow: #FFF 0 -1px 4px, #FF0 0 -2px 10px, #FF8000 0 -10px 20px, red 0 -18px 40px, inset 0px 0px 50px -1px rgba(0, 0, 0, 0);
+  background-color: #b87d43;
 }
 .home-container h1 {
   font-size: 10rem;
@@ -305,7 +302,7 @@ body {
   width: 100%;
   text-align: center;
   align-items: center;
-  color: #F0E6D2;
+  color: #e6e2d9;
   overflow: hidden;
 }
 .about-container h1 {
@@ -337,4 +334,4 @@ body {
 @font-face {
   font-family: CrimsonPro;
   src: url("../../assets/fonts/Crimson_Pro/CrimsonPro-VariableFont_wght.ttf");
-}
+}/*# sourceMappingURL=main.css.map */
